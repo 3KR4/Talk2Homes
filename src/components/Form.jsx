@@ -22,7 +22,7 @@ export default function Form() {
 
     try {
       const res = await emailjs.send(
-        "service_q2ir069",
+        "service_6vdbojr",
         "template_xsgfqu7",
         {
           name: data.name,

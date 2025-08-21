@@ -46,6 +46,9 @@ export default function Testimonials() {
           </div>
         ))}
       </div>
+      <div className="container video-holder">
+        <video src={`/clip.mkv`} controls />
+      </div>
     </div>
   );
 }

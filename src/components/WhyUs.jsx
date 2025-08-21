@@ -35,7 +35,7 @@ const faqs = [
   },
 ];
 
-const WhyUs = () => {
+const WhyUs = ({ isDesktop }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const toggleAccordion = (index) => {
@@ -47,7 +47,8 @@ const WhyUs = () => {
       <h1>Why choose us</h1>
 
       <div className="container">
-        <Image src={`/aboutus.png`} alt={`about-us`} fill />
+        {isDesktop && <Image src={`/aboutus.png`} alt={`about-us`} fill />}
+
         <div className="holder">
           {faqs.map((faq, index) => (
             <AccordionItem

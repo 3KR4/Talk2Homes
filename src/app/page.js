@@ -14,7 +14,6 @@ import Service from "@/components/Service";
 import WhyUs from "@/components/WhyUs";
 import NextTeam from "@/components/NextTeam";
 import Testimonials from "@/components/Testimonials";
-import Video from "@/components/Video";
 import LightRays from "@/components/LightRays";
 
 import Contact from "@/components/Contact";
@@ -51,6 +50,19 @@ export default function Home() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 1050);
+    };
+
+    handleResize(); // run once
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
       <div className="big-holder">
@@ -74,16 +86,15 @@ export default function Home() {
       </div>
       <div className="back-layer">
         <Tools />
-        <AboutUs />
+        <AboutUs isDesktop={isDesktop} />
       </div>
       <Counters />
       <Service />
-      <WhyUs />
+      <WhyUs isDesktop={isDesktop} />
       <NextTeam />
       <Testimonials />
 
-      <Video />
-      <Contact />
+      <Contact isDesktop={isDesktop} />
       <Chat />
       <div className="btns-holder">
         <FaAngleDoubleUp

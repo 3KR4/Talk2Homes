@@ -3,7 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function AboutUs() {
+export default function AboutUs({ isDesktop }) {
   return (
     <div id="about" className="landing about-us">
       <div className="container">
@@ -27,7 +27,7 @@ export default function AboutUs() {
           </Link>
         </div>
 
-        <Image src={`/aboutus.png`} alt={`about-us`} fill />
+        {isDesktop && <Image src={`/aboutus.png`} alt={`about-us`} fill />}
       </div>
     </div>
   );

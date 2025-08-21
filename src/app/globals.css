@@ -241,6 +241,9 @@ header .main-button {
   font-size: 14px;
   padding: 13px 27px;
 }
+header .bars {
+  display: none;
+}
 
 /*!=============== LANDING =============== */
 
@@ -353,7 +356,7 @@ header .main-button {
 .about-us {
   background: transparent;
   color: #222222;
-  height: unset;
+  height: unset !important;
 }
 .about-us .container {
   gap: 25px;
@@ -461,7 +464,8 @@ header .main-button {
   gap: 0;
   border: 2px dotted #696969;
   border-radius: 33px;
-  padding: 45px 22px;
+  padding: 35px 22px;
+
   transition: 0.4s;
 }
 .records .card.active {
@@ -479,9 +483,9 @@ header .main-button {
   transition: 0.4s;
 }
 .records .card.active h5 {
-  height: 26px;
+  height: max-content;
   visibility: visible;
-  margin-top: 18px;
+  margin-top: 13px;
 }
 .records .card h5.show {
   opacity: 1;
@@ -691,6 +695,7 @@ header .main-button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 .next-team h3 {
   font-size: 54px;
@@ -731,6 +736,7 @@ header .main-button {
   grid-gap: 20px;
   gap: 18px;
   width: 75%;
+  padding: 0;
 }
 .testimonials .card {
   display: flex;
@@ -765,76 +771,22 @@ header .main-button {
   font-size: 14px;
   color: var(--paragraph);
 }
-
-/*!=============== VIDEOS =============== */
-
-.videos {
-  gap: 35px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 55px auto;
-  width: 85%;
-}
-.videos .holder {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-  width: 100%;
-  min-height: 375px;
-}
-.videos .holder ul {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  min-width: 35%;
-  border-radius: 12px;
-}
-.videos .holder ul li {
+.testimonials .video-holder {
   background: #f0f0f0;
-  padding: 15px 23px;
-  text-align: left;
-  text-transform: capitalize;
-  font-weight: 500;
-  display: flex;
+  padding: 15px;
+  border-radius: 35px;
+  display: flex !important;
   align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-  font-size: 15px;
-  cursor: pointer;
-  transition: 0.3s;
-  width: 100%;
-  border-radius: 5px;
+  justify-content: center;
+  margin-top: 10px;
 }
-.videos .holder ul li:hover,
-.videos .holder ul li.active {
-  background: var(--main-color);
-  color: white;
-  font-weight: 500;
-  border-radius: 5px 15px 15px 5px !important;
+.testimonials .video-holder video {
+  min-width: 100%;
+  border-radius: 25px;
 }
-.videos .holder ul li:hover {
-  width: 104% !important;
+.selectextShadowHost {
+  display: none !important;
 }
-.videos .holder ul li.active {
-  width: 103%;
-}
-.videos .holder ul li:first-child {
-  border-radius: 15px 15px 5px 5px;
-}
-.videos .holder ul li:last-child {
-  border-radius: 5px 5px 15px 15px;
-}
-.videos .holder video {
-  width: 60%;
-  border-radius: 15px;
-}
-.videos .holder span {
-  font-weight: 500;
-  font-size: 13px;
-}
-
 /*!=============== CHAT =============== */
 
 .chat {
@@ -911,8 +863,8 @@ header .main-button {
 }
 .contact img {
   position: relative !important;
-  width: 50% !important;
-  height: unset !important;
+  width: 39% !important;
+  height: 100% !important;
   border-radius: 25px !important;
 }
 .contact .container div:has(form) {
@@ -986,9 +938,11 @@ span.error {
 }
 .success {
   color: green;
-  margin: 10px 0;
+  margin: 4px 0;
   text-align: center;
   font-weight: bold;
+
+  @media();
 }
 
 .main-button:disabled {
@@ -1182,4 +1136,509 @@ footer .bottom .copyright a:hover {
   font-style: normal;
   margin-top: 20px;
   line-height: 1.6;
+}
+
+/*!=============== MEDIA QUERY =============== */
+
+@media (max-width: 1600px) {
+  .testimonials .container {
+    width: 85%;
+  }
+}
+@media (max-width: 1500px) {
+  .next-team h3 {
+    font-size: 48px;
+  }
+  .next-team h4 {
+    font-size: 27px;
+  }
+  .next-team button {
+    padding: 15px;
+    margin-top: 17px;
+  }
+  .testimonials .container {
+    width: 95%;
+    gap: 13px;
+  }
+  .back-layer {
+    gap: 75px;
+  }
+}
+@media (max-width: 1400px) {
+  .counters,
+  .next-team {
+    width: 90%;
+  }
+  .testimonials {
+    margin: 0;
+  }
+}
+@media (max-width: 1300px) {
+  .counters,
+  .next-team {
+    width: 95%;
+  }
+  .why-us img {
+    min-width: 40% !important;
+  }
+}
+@media (max-width: 1200px) {
+  header .container {
+    width: unset;
+  }
+  .landing > .container {
+    width: 90%;
+  }
+  .landing .left h2 {
+    font-size: 76px;
+  }
+  .landing .left p {
+    font-size: 18px;
+  }
+
+  .about-us .left h2 {
+    font-size: 50px !important;
+  }
+
+  .about-us img {
+    width: 46% !important;
+  }
+  .service .container,
+  .why-us .container {
+    width: 95%;
+  }
+  .testimonials .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .testimonials .card {
+    width: 32%;
+  }
+}
+@media (max-width: 1100px) {
+  .landing .left h2 {
+    font-size: 70px;
+  }
+  .about-us .left h2 {
+    font-size: 45px !important;
+  }
+  .next-team h3 {
+    font-size: 40px;
+  }
+  .counters .container {
+    gap: 20px;
+  }
+  .counters .card .number {
+    font-size: 47px;
+  }
+  .service .card .text {
+    gap: 3px;
+  }
+  .service .card h4 {
+    font-size: 23px;
+  }
+  .counters .card h5 {
+    text-align: center;
+    font-size: 17px;
+  }
+  .service .card p {
+    font-size: 16px;
+  }
+  .why-us .container {
+    gap: 25px;
+  }
+}
+@media (max-width: 992px) {
+  .landing {
+    height: 64vh;
+  }
+  .landing .left {
+    width: 90%;
+  }
+  .back-layer {
+    padding: 69px 0 35px;
+  }
+
+  .records,
+  .records .container {
+    width: 100%;
+    padding: 0;
+  }
+  .tools {
+    width: 92%;
+  }
+  .tools li img {
+    width: 135px !important;
+  }
+  .about-us .left {
+    align-items: center;
+    gap: 10px;
+  }
+  .about-us .left h2,
+  .landing .left p {
+    text-align: center;
+  }
+  .about-us .left hr {
+    margin: 0;
+  }
+  .counters {
+    padding: 55px 0;
+    margin: 35px auto 40px;
+  }
+  .counters .container {
+    gap: 15px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 30px;
+  }
+  .testimonials .card {
+    width: 48%;
+  }
+  .contact .container {
+    width: 90%;
+  }
+}
+@media (max-width: 900px) {
+  header .hold {
+    position: absolute;
+    right: 0;
+    flex-direction: column;
+    background: #000000bf;
+    backdrop-filter: blur(7px);
+    border-radius: 16px;
+    padding: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    border: 2px dotted #696969;
+    gap: 16px;
+    top: 140px;
+    z-index: -1;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.4s;
+  }
+  header .hold.active {
+    top: 100px;
+    visibility: visible;
+    opacity: 1;
+    z-index: 10;
+  }
+  header .main-button {
+    width: 100%;
+    height: 45px;
+    font-size: 15px;
+  }
+  header .bars {
+    display: flex;
+    color: white;
+    font-size: 35px;
+    transform: scaleX(1.3) translateX(-13px);
+  }
+  .landing > .container {
+    width: 95%;
+  }
+  .back-layer {
+    gap: 85px;
+  }
+  .tools li img {
+    width: 112px !important;
+  }
+  .service .card h4 {
+    font-size: 20px;
+  }
+  .service .card p {
+    font-size: 15px;
+  }
+  .next-team {
+    padding: 48px 0;
+  }
+  .next-team h3 {
+    font-size: 32px;
+  }
+  .next-team h4 {
+    font-size: 23px;
+  }
+  .next-team button {
+    font-size: 14px;
+    height: 45px;
+  }
+  footer .container {
+    width: 95%;
+  }
+}
+@media (max-width: 786px) {
+  .landing .left h2 {
+    font-size: 63px;
+  }
+  .records .card h5 {
+    font-size: 15px;
+  }
+  .service .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .next-team h3 {
+    font-size: 29px;
+  }
+  .next-team h4 {
+    font-size: 21px;
+  }
+
+  footer .top .logo {
+    width: 130px !important;
+  }
+}
+@media (max-width: 700px) {
+  .landing .left {
+    width: 100%;
+  }
+  .landing .left h2 {
+    font-size: 58px;
+  }
+  .tools {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  .tools li {
+    align-items: center;
+    justify-content: center;
+  }
+  .counters .container {
+    gap: 0;
+  }
+  .next-team h3 {
+    font-size: 25px;
+  }
+  .next-team h4 {
+    font-size: 18px;
+  }
+  .next-team button {
+    font-size: 13px;
+    height: 40px;
+  }
+  .testimonials {
+    gap: 25px;
+  }
+  .testimonials .container {
+    gap: 20px;
+  }
+  .testimonials .card {
+    width: 95%;
+  }
+  footer .top {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  footer .top a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  footer .top .logo {
+    width: 180px !important;
+  }
+  footer h4 {
+    text-align: center;
+  }
+  footer .social {
+    justify-content: center;
+  }
+  footer .newsletter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .landing .left h2 {
+    font-size: 43px;
+  }
+  .landing .left p {
+    font-size: 17px;
+  }
+  .landing > .container {
+    gap: 50px;
+  }
+  .counters {
+    padding: 40px 0;
+  }
+  .counters .container {
+    gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .counters .card .number {
+    font-size: 38px;
+  }
+  .testimonials .video-holder {
+    padding: 0;
+  }
+  .contact form {
+    padding: 15px;
+  }
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 38px;
+  }
+  header .bars {
+    width: 30px;
+  }
+  header .hold {
+    padding: 15px;
+  }
+  header nav ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  header nav ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  header .main-button {
+    height: 43px;
+  }
+  .landing > .container {
+    gap: 35px;
+  }
+  .landing .left h2 {
+    font-size: 40px;
+  }
+  .landing .left p {
+    font-size: 15px;
+  }
+  .records .card {
+    padding: 19px 22px;
+    border-radius: 18px;
+  }
+  .records .card.active {
+    padding: 20px 22px 18px;
+  }
+  .records .card.active h5 {
+    margin-top: 5px;
+  }
+  .tools {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .tools li img {
+    width: 140px !important;
+  }
+  .about-us .left h2 {
+    font-size: 40px !important;
+  }
+  .next-team {
+    padding: 48px 20px;
+  }
+  .next-team h3 {
+    font-size: 23px;
+  }
+  .next-team h4 {
+    font-size: 16px;
+  }
+  .why-us .holder .card .top {
+    gap: 16px;
+  }
+  .why-us .holder .card .top svg {
+    min-width: 18px;
+    min-height: 18px;
+  }
+  .testimonials .video-holder video {
+    border-radius: 18px;
+  }
+  .contact .container {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .contact h4 {
+    max-width: 95%;
+    text-align: center;
+    margin: -35px auto -5px;
+  }
+  footer {
+    padding: 50px 0;
+  }
+  footer .top {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+  }
+  footer .bottom .copyright {
+    max-width: 90%;
+  }
+  .chat {
+    width: 95%;
+    right: unset;
+    transform: translateX(-50%) scaleY(0);
+    left: 50%;
+  }
+  .chat.active {
+    transform: translateX(-50%) scaleY(1);
+  }
+}
+@media (max-width: 415px) {
+  .logo {
+    width: 105px !important;
+  }
+  header .bars {
+    width: 25px;
+  }
+  .landing {
+    height: 75vh;
+  }
+  .landing .left h2 {
+    font-size: 36px;
+  }
+  .landing .left p {
+    font-size: 14px;
+    max-width: 93%;
+  }
+  .about-us .left h2 {
+    font-size: 35px !important;
+  }
+  .about-us .main-button {
+    height: 44px;
+    font-size: 13px;
+  }
+  .about-us .left p.last-p {
+    margin-bottom: 13px;
+  }
+  .records .card,
+  .records .card.active {
+    padding: 15px;
+  }
+  .records .card h5 {
+    font-size: 13px;
+    font-weight: 300;
+  }
+  .why-us .holder .card .top span {
+    font-size: 14px;
+  }
+  .why-us .holder .card .content p {
+    font-size: 13px;
+  }
+  .contact h4 {
+    max-width: 90%;
+    font-size: 14px;
+  }
+}
+@media (max-width: 375px) {
+  .landing {
+    height: 88vh;
+  }
+  .landing .left .holder button {
+    font-size: 14px;
+    height: 44px;
+  }
+  .records .play {
+    width: 53px;
+    height: 32px;
+  }
+  .back-layer {
+    gap: 90px;
+  }
 }
