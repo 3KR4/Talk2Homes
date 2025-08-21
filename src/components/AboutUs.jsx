@@ -3,7 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Landing() {
+export default function AboutUs() {
   return (
     <div id="about" className="landing about-us">
       <div className="container">

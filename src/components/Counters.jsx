@@ -1,15 +1,24 @@
 "use client";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
+import Squares from "@/components/Squares";
 
 export default function Counters() {
   const { ref, inView } = useInView({
-    triggerOnce: true, // run only once
-    threshold: 0.3, // % of element visible before triggering
+    triggerOnce: true,
+    threshold: 0.3,
   });
 
   return (
     <div className="counters" ref={ref}>
+      <Squares
+        speed={0.2}
+        squareSize={45}
+        direction="diagonal"
+        borderColor="#472810"
+        hoverFillColor="#222"
+      />
+
       <div className="container">
         <div className="card">
           <div className="number">

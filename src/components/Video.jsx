@@ -14,7 +14,6 @@ export default function Video() {
 
   return (
     <div className="videos">
-      <div className="container">
         <h1>Meet the Virtual Assistant</h1>
         <div className="holder">
           <ul>
@@ -35,7 +34,6 @@ export default function Video() {
             controls
           />
         </div>
-      </div>
     </div>
   );
 }

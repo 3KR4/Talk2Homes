@@ -5,9 +5,9 @@ import Image from "next/image";
 export default function Service() {
   return (
     <div id="services" className="service">
+      <h1>Our Services</h1>
+
       <div className="container">
-        <h1>Our Services</h1>
-        <div className="hold">
           <div className="card">
             <Image src={`/services/1.jpg`} alt={``} fill />
             <span></span>
@@ -60,7 +60,6 @@ export default function Service() {
               </p>
             </div>
           </div>
-        </div>
       </div>
     </div>
   );

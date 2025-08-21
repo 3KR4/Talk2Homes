@@ -13,19 +13,22 @@ export default function () {
             <Image className="logo" src={`/logo.png`} alt={``} fill />
           </Link>
           <ul>
-            <h4>links</h4>
+            <h4>Sections</h4>
 
             <li>
-              <Link href={``}>industries</Link>
+              <Link href={`/#about`}>about us</Link>
             </li>
             <li>
-              <Link href={``}>about us</Link>
+              <Link href={`/#services`}>services</Link>
             </li>
             <li>
-              <Link href={``}>affiliates</Link>
+              <Link href={`/#whyUs`}>why Us</Link>
             </li>
             <li>
-              <Link href={``}>contact</Link>
+              <Link href={`/#testimonials`}>testimonials</Link>
+            </li>
+            <li>
+              <Link href={`/#contact`}>contact</Link>
             </li>
           </ul>
           <div className="holder">
@@ -43,11 +46,8 @@ export default function () {
             </ul>
           </div>
           <div className="newsletter">
-            <h4>newsletter</h4>
-            <p>
-              If you would like more information on how our consultants could
-              help your business, contact us today!
-            </p>
+            <h4>Social</h4>
+
             <div className="social">
               <Link href={`/`} target="_blank" rel="noopener noreferrer">
                 <FaFacebookF />
@@ -64,8 +64,7 @@ export default function () {
         <div className="bottom">
           <div className="copyright">
             Copyright © Talk2Homes | All Rights Reserved 2025 |{" "}
-            <Link href={`/`}>Privacy Policy</Link> |{" "}
-            <Link href={`/`}>Service Agreementy</Link>
+            <Link href={`/privacy`}>Privacy Policy</Link>
           </div>
         </div>
       </div>
