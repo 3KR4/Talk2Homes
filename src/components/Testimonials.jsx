@@ -33,10 +33,18 @@ const clients = [
 export default function Testimonials() {
   return (
     <div id="testimonials" className="testimonials">
-      <h1>testimonials</h1>
+      <h1 data-aos="fade-up">
+        testimonials
+      </h1>
+
       <div className="container">
         {clients?.map((x, index) => (
-          <div key={index} className="card">
+          <div
+            key={index}
+            className="card"
+            data-aos={index < 2 ? "fade-up-right" : "fade-up-left"}
+            data-aos-duration="1100"
+          >
             <video src={x.file} controls />
             <div className="text">
               <h4>{x.name}</h4>
@@ -46,7 +54,12 @@ export default function Testimonials() {
           </div>
         ))}
       </div>
-      <div className="container video-holder">
+
+      <div
+        className="container video-holder"
+        data-aos="zoom-in"
+        data-aos-duration="1300"
+      >
         <video src={`/clip.mkv`} controls />
       </div>
     </div>

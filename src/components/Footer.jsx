@@ -9,12 +9,12 @@ export default function () {
     <footer>
       <div className="container">
         <div className="top">
-          <Link href={`/`}>
+          <Link href={`/`} data-aos="fade-up" data-aos-delay="0">
             <Image className="logo" src={`/logo.png`} alt={``} fill />
           </Link>
-          <ul>
-            <h4>Sections</h4>
 
+          <ul data-aos="fade-up" data-aos-delay="200">
+            <h4>Sections</h4>
             <li>
               <Link href={`/#about`}>about us</Link>
             </li>
@@ -31,7 +31,8 @@ export default function () {
               <Link href={`/#contact`}>contact</Link>
             </li>
           </ul>
-          <div className="holder">
+
+          <div className="holder" data-aos="fade-up" data-aos-delay="400">
             <ul>
               <h4>call us</h4>
               <li>
@@ -45,9 +46,9 @@ export default function () {
               </li>
             </ul>
           </div>
-          <div className="newsletter">
-            <h4>Social</h4>
 
+          <div className="newsletter" data-aos="fade-up" data-aos-delay="600">
+            <h4>Social</h4>
             <div className="social">
               <Link href={`/`} target="_blank" rel="noopener noreferrer">
                 <FaFacebookF />
@@ -61,7 +62,13 @@ export default function () {
             </div>
           </div>
         </div>
-        <div className="bottom">
+
+        <div
+          className="bottom"
+          data-aos="fade-up"
+          data-aos-delay="800"
+          data-aos-offset="0"
+        >
           <div className="copyright">
             Copyright © Talk2Homes | All Rights Reserved 2025 |{" "}
             <Link href={`/privacy`}>Privacy Policy</Link>

@@ -24,6 +24,9 @@ body {
   display: flex;
   flex-direction: column;
 }
+body > * {
+  overflow: hidden;
+}
 ::-webkit-scrollbar {
   width: 6px;
   height: 8px;
@@ -196,7 +199,7 @@ header {
 }
 body:has(.privacy) header,
 body:has(.booking) header {
-  padding: 10px;
+  padding: 12px 15px;
   background: #000000;
 }
 header .container {
@@ -287,12 +290,12 @@ header .bars {
   display: flex;
   gap: 14px;
 }
-.landing .left .holder button {
+.landing .left .holder .button {
   padding: 17px 29px;
   border-radius: 11px;
   text-transform: capitalize;
   font-family: "Poppins";
-  font-weight: 600;
+  font-weight: 500;
 }
 .landing .left .holder a {
   display: flex;
@@ -307,6 +310,9 @@ header .bars {
 .landing .left .holder a:hover {
   background: var(--main-color) !important;
   border-color: transparent;
+}
+.landing .left .holder a.button {
+  border: none;
 }
 .light-rays-container {
   width: 100%;
@@ -330,7 +336,7 @@ header .bars {
   background-position: center;
   display: flex;
   flex-direction: column;
-  gap: 65px;
+  gap: 75px;
   padding: 69px 0 98px;
 }
 .tools {
@@ -389,10 +395,13 @@ header .bars {
 }
 .about-us img {
   position: relative !important;
-  width: 49% !important;
+  min-width: 49% !important;
+  max-width: 49%;
   height: unset !important;
   transition: 0.3s;
-  border-radius: 40px;
+  border-radius: 25px;
+  height: 100% !important;
+  object-fit: cover;
 }
 
 /*!=============== COUNTERS =============== */
@@ -709,7 +718,7 @@ header .bars {
   font-weight: 400;
   text-align: center;
 }
-.next-team button {
+.next-team a {
   font-size: 15px;
   font-weight: 600;
   text-transform: uppercase;
@@ -717,7 +726,7 @@ header .bars {
   background: white;
   color: black;
 }
-.next-team button:hover {
+.next-team a:hover {
   color: white;
   background: var(--main-color) !important;
 }
@@ -833,7 +842,7 @@ header .bars {
   padding: 15px;
 }
 .chat .holder p {
-  margin-bottom: 15px;
+  margin-bottom: 6px;
   font-size: 14px;
   text-align: center;
 }
@@ -859,13 +868,15 @@ header .bars {
   display: flex;
   justify-content: space-between;
   gap: 35px;
+  width: 50%;
   align-items: center;
 }
 .contact img {
   position: relative !important;
   width: 39% !important;
-  height: 100% !important;
-  border-radius: 25px !important;
+  border-radius: 20px !important;
+  height: 49vh !important;
+  object-fit: cover;
 }
 .contact .container div:has(form) {
   width: 100%;
@@ -989,7 +1000,7 @@ span.error {
   cursor: pointer;
   opacity: 0;
   transform: translateX(20px);
-  transition: 0.3s;
+  transition: 0.5s;
 }
 .scroll-top.active {
   opacity: 1;
@@ -1007,6 +1018,7 @@ footer {
   color: white;
   padding: 72px 0 50px;
   margin-top: 55px;
+  overflow: hidden;
 }
 footer .container {
   display: flex;
@@ -1102,7 +1114,7 @@ footer .bottom .copyright a:hover {
 
 .privacy.container {
   margin: 0 auto;
-  padding: 40px 0 0;
+  padding: 40px 15px 0;
   line-height: 1.6;
   color: #333;
 }
@@ -1160,9 +1172,6 @@ footer .bottom .copyright a:hover {
     width: 95%;
     gap: 13px;
   }
-  .back-layer {
-    gap: 75px;
-  }
 }
 @media (max-width: 1400px) {
   .counters,
@@ -1171,6 +1180,9 @@ footer .bottom .copyright a:hover {
   }
   .testimonials {
     margin: 0;
+  }
+  .contact .container {
+    width: 65%;
   }
 }
 @media (max-width: 1300px) {
@@ -1248,6 +1260,9 @@ footer .bottom .copyright a:hover {
   .why-us .container {
     gap: 25px;
   }
+  .contact .container {
+    width: 85%;
+  }
 }
 @media (max-width: 992px) {
   .landing {
@@ -1292,6 +1307,11 @@ footer .bottom .copyright a:hover {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     row-gap: 30px;
+  }
+  .next-team,
+  .counters {
+    width: 100% !important;
+    border-radius: 0;
   }
   .testimonials .card {
     width: 48%;
@@ -1385,9 +1405,12 @@ footer .bottom .copyright a:hover {
   .next-team h4 {
     font-size: 21px;
   }
-
   footer .top .logo {
     width: 130px !important;
+  }
+  .privacy h1 {
+    text-align: center;
+    line-height: 1.2;
   }
 }
 @media (max-width: 700px) {

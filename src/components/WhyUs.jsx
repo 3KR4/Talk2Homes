@@ -44,19 +44,36 @@ const WhyUs = ({ isDesktop }) => {
 
   return (
     <div id="whyUs" className="why-us">
-      <h1>Why choose us</h1>
+      {/* العنوان */}
+      <h1 data-aos="fade-up">Why choose us</h1>
 
       <div className="container">
-        {isDesktop && <Image src={`/aboutus.png`} alt={`about-us`} fill />}
+        {/* الصورة */}
+        {isDesktop && (
+          <Image
+            data-aos="fade-up-right"
+            data-aos-offset="350"
+            src={`/thumbnail3.jpg`}
+            alt={`about-us`}
+            fill
+          />
+        )}
 
+        {/* الـ Accordion */}
         <div className="holder">
           {faqs.map((faq, index) => (
-            <AccordionItem
+            <div
               key={index}
-              faq={faq}
-              isActive={activeIndex === index}
-              onClick={() => toggleAccordion(index)}
-            />
+              data-aos="fade-up-left"
+              data-aos-duration="600"
+              data-aos-delay={index * 150} // 👈 كل عنصر يتأخر عن اللي قبله
+            >
+              <AccordionItem
+                faq={faq}
+                isActive={activeIndex === index}
+                onClick={() => toggleAccordion(index)}
+              />
+            </div>
           ))}
         </div>
       </div>

@@ -49,7 +49,12 @@ export default function Form() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
       {/* Name */}
-      <div className="inputHolder">
+      <div
+        className="inputHolder"
+        data-aos="fade-up"
+        data-aos-duration="1500"
+        data-aos-delay="150"
+      >
         <label htmlFor="name">Name</label>
         <input
           id="name"
@@ -67,7 +72,7 @@ export default function Form() {
       </div>
 
       {/* Phone */}
-      <div className="inputHolder">
+      <div className="inputHolder" data-aos="fade-up" data-aos-delay="350">
         <label htmlFor="phone">Phone Number</label>
         <input
           id="phone"
@@ -85,7 +90,7 @@ export default function Form() {
       </div>
 
       {/* Email */}
-      <div className="inputHolder">
+      <div className="inputHolder" data-aos="fade-up" data-aos-delay="550">
         <label htmlFor="email">Email Address</label>
         <input
           id="email"
@@ -103,7 +108,7 @@ export default function Form() {
       </div>
 
       {/* Message */}
-      <div className="inputHolder">
+      <div className="inputHolder" data-aos="fade-up" data-aos-delay="750">
         <label htmlFor="message">Your Message</label>
         <textarea
           id="message"
@@ -123,7 +128,13 @@ export default function Form() {
       {successMsg && <p className="success">{successMsg}</p>}
 
       {/* Submit Button */}
-      <button className="main-button" type="submit" disabled={loading}>
+      <button
+        className="main-button"
+        type="submit"
+        disabled={loading}
+        data-aos="fade-up"
+        data-aos-delay="750"
+      >
         {loading ? (
           <span className="loader"></span>
         ) : (

@@ -50,7 +50,7 @@ export default function Home() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const [isDesktop, setIsDesktop] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
@@ -96,7 +96,7 @@ export default function Home() {
 
       <Contact isDesktop={isDesktop} />
       <Chat />
-      <div className="btns-holder">
+      <div className="btns-holder" data-aos="fade-left" data-aos-delay="600">
         <FaAngleDoubleUp
           className={`scroll-top ${showScroll ? "active" : ""}`}
           onClick={scrollToTop}
