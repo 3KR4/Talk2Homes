@@ -14,6 +14,23 @@ export const metadata = {
       "Real Estate Cold Calling Services specializes in providing high-quality cold calling services to real estate professionals.",
     type: "website",
   },
+  openGraph: {
+    title: "Talk to Homes",
+    description:
+      "Real Estate Cold Calling Services specializes in providing high-quality cold calling services to real estate professionals.",
+    url: "https://talk2-homes.vercel.app",
+    siteName: "Talk to Homes",
+    images: [
+      {
+        url: "/ogo.png",
+        width: 1300,
+        height: 750,
+        alt: "Talk to Homes Logo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
   icons: {
     icon: "/small-logo.png",
     shortcut: "/small-logo.png",
