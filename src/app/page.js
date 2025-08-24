@@ -1,10 +1,5 @@
 "use client";
-
 import React, { useState, useEffect } from "react";
-
-import Link from "next/link";
-import Image from "next/image";
-
 import Header from "@/components/Header";
 import Landing from "@/components/Landing";
 import Tools from "@/components/Tools";
@@ -15,21 +10,13 @@ import WhyUs from "@/components/WhyUs";
 import NextTeam from "@/components/NextTeam";
 import Testimonials from "@/components/Testimonials";
 import LightRays from "@/components/LightRays";
-
 import Contact from "@/components/Contact";
 import Chat from "@/components/Chat";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-
 import { IoChatbubblesSharp } from "react-icons/io5";
 import { FaAngleDoubleUp } from "react-icons/fa";
 
 export default function Home() {
   const [showScroll, setShowScroll] = useState(false);
-
   useEffect(() => {
     const landing = document.querySelector(".landing");
 
@@ -49,17 +36,13 @@ export default function Home() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-
   const [isDesktop, setIsDesktop] = useState(true);
-
   useEffect(() => {
     const handleResize = () => {
       setIsDesktop(window.innerWidth > 1050);
     };
-
-    handleResize(); // run once
+    handleResize();
     window.addEventListener("resize", handleResize);
-
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -67,7 +50,6 @@ export default function Home() {
     <>
       <div className="big-holder">
         <Header />
-
         <LightRays
           raysOrigin="top"
           raysColor="#FF821D"
@@ -93,20 +75,27 @@ export default function Home() {
       <WhyUs isDesktop={isDesktop} />
       <NextTeam />
       <Testimonials />
-
       <Contact isDesktop={isDesktop} />
       <Chat />
-      <div className="btns-holder" data-aos="fade-left" data-aos-delay="600">
+      <div
+        className="btns-holder"
+        data-aos="fade-left"
+        data-aos-delay="600"
+        data-aos-offset="50"
+      >
         <FaAngleDoubleUp
           className={`scroll-top ${showScroll ? "active" : ""}`}
           onClick={scrollToTop}
         />
-        <IoChatbubblesSharp
-          className="chat-icon"
+        <div
+          className={`chat-holder ${showScroll ? "" : "active"}`}
           onClick={() => {
             document.querySelector(".chat").classList.add("active");
           }}
-        />
+        >
+          <span className="chat-label">lets begin now</span>
+          <IoChatbubblesSharp className="chat-icon" />
+        </div>
       </div>
     </>
   );

@@ -196,6 +196,8 @@ a {
 header {
   transition: 0.3s;
   padding: 18px 10px 0px 29px;
+  position: relative;
+  z-index: 1000;
 }
 body:has(.privacy) header,
 body:has(.booking) header {
@@ -260,7 +262,7 @@ header .bars {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 75px;
+  gap: 50px;
   flex-direction: column;
 }
 .landing .left {
@@ -450,6 +452,13 @@ header .bars {
 
 /*!=============== RECORDS =============== */
 
+.records h3 {
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 15px;
+}
 .records .audio-waves {
   width: 100%;
 }
@@ -473,15 +482,30 @@ header .bars {
   gap: 0;
   border: 2px dotted #696969;
   border-radius: 33px;
-  padding: 35px 22px;
-
+  padding: 35px 22px 16px;
   transition: 0.4s;
 }
 .records .card.active {
-  padding: 35px 22px 18px;
+  padding: 35px 22px 16px;
+}
+.records .card h4 {
+  color: var(--paragraph-2);
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 15px;
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  transition: 0.3s;
+  opacity: 1;
+}
+.records .card.active h4 {
+  opacity: 0;
+  z-index: -1;
 }
 .records .card h5 {
-  color: white;
+  color: var(--paragraph-2);
   text-align: center;
   font-size: 17px;
   font-weight: 400;
@@ -490,11 +514,13 @@ header .bars {
   visibility: hidden;
   opacity: 0;
   transition: 0.4s;
+  min-height: 30px;
 }
 .records .card.active h5 {
   height: max-content;
   visibility: visible;
-  margin-top: 13px;
+  margin-top: 4px;
+  min-height: 26px;
 }
 .records .card h5.show {
   opacity: 1;
@@ -987,14 +1013,17 @@ span.error {
   flex-direction: column;
   gap: 6px;
   z-index: 1000;
+  overflow: unset;
+  align-items: end;
 }
 .btns-holder svg {
-  width: 45px;
-  height: 45px;
   background: var(--main-color);
   color: white;
   border-radius: 8px;
-  padding: 9px;
+  padding: 8px;
+  width: 43px;
+  height: 43px;
+  font-size: 25px;
 }
 .scroll-top {
   cursor: pointer;
@@ -1006,9 +1035,41 @@ span.error {
   opacity: 1;
   transform: translateX(0);
 }
-.chat-icon {
+.chat-holder {
+  position: relative;
   cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--main-color);
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+  transition: 0.3s;
+}
+.chat-holder:hover {
+  padding-left: 12px;
+}
+.chat-icon {
   color: var(--main-color);
+  z-index: 2;
+  background: var(--main-color);
+  min-width: 43px;
+}
+.chat-label {
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: capitalize;
+  height: 20px;
+  opacity: 0;
+  width: 0;
+  transition: 0.3s;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.chat-holder:hover .chat-label {
+  opacity: 1;
+  width: 100px;
 }
 
 /*!=============== FOOTER =============== */
@@ -1152,6 +1213,15 @@ footer .bottom .copyright a:hover {
 
 /*!=============== MEDIA QUERY =============== */
 
+@media (min-width: 1000px) {
+  .chat-holder.active {
+    padding-left: 12px;
+  }
+  .chat-holder.active .chat-label {
+    opacity: 1;
+    width: 100px;
+  }
+}
 @media (max-width: 1600px) {
   .testimonials .container {
     width: 85%;

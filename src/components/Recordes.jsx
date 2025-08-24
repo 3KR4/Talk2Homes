@@ -123,6 +123,7 @@ const AudioCard = forwardRef(({ track, isActive }, ref) => {
 
   return (
     <div className={`card ${isActive || currentLine?.text ? "active" : ""}`}>
+      <h4>{track?.title}</h4>
       <div className="audio-waves" ref={waveformRef} />
       <h5 className={`lyric-line ${visible ? "show" : ""}`}>
         <strong>
@@ -161,11 +162,8 @@ export default function Recordes() {
   };
 
   return (
-    <div
-      className="records"
-      data-aos="fade-up"
-      data-aos-delay="600"
-    >
+    <div className="records" data-aos="fade-up" data-aos-delay="600">
+      <h3>Listen to our LIVE calls</h3>
       <div className="container">
         <Swiper
           modules={[Navigation]}
@@ -197,11 +195,7 @@ export default function Recordes() {
         </Swiper>
 
         {/* أزرار التحكم */}
-        <div
-          className="custom-nav"
-          data-aos="fade-up"
-          data-aos-delay="800"
-        >
+        <div className="custom-nav" data-aos="fade-up" data-aos-delay="800">
           <button onClick={() => swiperRef.current?.slidePrev()}>
             <IoIosSkipBackward />
           </button>

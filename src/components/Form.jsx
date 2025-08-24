@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { IoSend } from "react-icons/io5";
 import emailjs from "@emailjs/browser";
 
-export default function Form() {
+export default function Form({ isAnimated }) {
   const {
     register,
     handleSubmit,
@@ -132,8 +132,9 @@ export default function Form() {
         className="main-button"
         type="submit"
         disabled={loading}
-        data-aos="fade-up"
-        data-aos-delay="750"
+        {...(isAnimated
+          ? { "data-aos": "fade-up", "data-aos-delay": "750" }
+          : {})}
       >
         {loading ? (
           <span className="loader"></span>
