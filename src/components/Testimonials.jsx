@@ -21,21 +21,12 @@ const clients = [
       "James closed 5 extra property deals in just two months. Clear, professional communication over the phone made his international clients feel at ease and built instant trust.",
     file: "/testimonials/3.mp4",
   },
-  {
-    name: "Layla Hassan",
-    jop: "Tech Startup Founder",
-    paragraph:
-      "By integrating No Accent Callers, Layla’s support team reduced call drop-offs by 42%. Investors and partners noticed the difference, giving her brand a stronger, more professional image.",
-    file: "/testimonials/4.mp4",
-  },
 ];
 
 export default function Testimonials() {
   return (
     <div id="testimonials" className="testimonials">
-      <h1 data-aos="fade-up">
-        testimonials
-      </h1>
+      <h1 data-aos="fade-up">testimonials</h1>
 
       <div className="container">
         {clients?.map((x, index) => (

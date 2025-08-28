@@ -2,6 +2,7 @@ import "./globals.css";
 import "aos/dist/aos.css";
 import AOSInit from "@/components/AOSInit";
 import Footer from "@/components/Footer";
+
 export const metadata = {
   title: "Talk to Homes",
   description:
