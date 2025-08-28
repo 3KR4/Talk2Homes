@@ -215,7 +215,7 @@ body:has(.booking) header .container {
   position: relative !important;
   height: unset !important;
   transition: 0.3s;
-  width: 125px !important;
+  width: 135px !important;
 }
 header .hold {
   display: flex;
@@ -1200,16 +1200,6 @@ footer .bottom .copyright a:hover {
 
 /*!=============== MEDIA QUERY =============== */
 
-@media (min-width: 1000px) {
-  .chat-holder.active {
-    padding-left: 12px;
-  }
-  .chat-holder.active .chat-label {
-    opacity: 1;
-    width: 100px;
-  }
-}
-
 @media (max-width: 1500px) {
   .next-team h3 {
     font-size: 48px;
@@ -1238,6 +1228,9 @@ footer .bottom .copyright a:hover {
   }
 }
 @media (max-width: 1300px) {
+  header .logo {
+    width: 125px !important;
+  }
   .counters,
   .next-team {
     width: 95%;
@@ -1278,6 +1271,15 @@ footer .bottom .copyright a:hover {
     width: 32%;
   }
 }
+@media (min-width: 1000px) {
+  .chat-holder.active {
+    padding-left: 12px;
+  }
+  .chat-holder.active .chat-label {
+    opacity: 1;
+    width: 100px;
+  }
+}
 @media (max-width: 1100px) {
   .landing .left h2 {
     font-size: 70px;
@@ -1315,6 +1317,9 @@ footer .bottom .copyright a:hover {
   }
 }
 @media (max-width: 992px) {
+    header .logo {
+    width: 135px !important;
+  }
   .landing {
     height: 64vh;
   }
@@ -1324,7 +1329,6 @@ footer .bottom .copyright a:hover {
   .back-layer {
     padding: 69px 0 35px;
   }
-
   .records,
   .records .container {
     width: 100%;
@@ -1527,7 +1531,6 @@ footer .bottom .copyright a:hover {
     flex-direction: column;
   }
 }
-
 @media (max-width: 600px) {
   .landing .left h2 {
     font-size: 43px;
@@ -1655,7 +1658,7 @@ footer .bottom .copyright a:hover {
 }
 @media (max-width: 415px) {
   .logo {
-    width: 105px !important;
+    width: 115px !important;
   }
   header .bars {
     width: 25px;

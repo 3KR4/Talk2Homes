@@ -40,7 +40,6 @@ export default function Testimonials() {
                 ? "fade-up"
                 : "fade-up-left"
             }
-            data-aos-duration="900"
           >
             <video src={x.file} controls />
             <div className="text">
