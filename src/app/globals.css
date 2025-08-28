@@ -759,7 +759,7 @@ header .bars {
   display: flex;
   flex-direction: column;
   gap: 35px;
-  margin: 55px auto;
+  margin: 55px 0;
 }
 .testimonials .container {
   display: grid;

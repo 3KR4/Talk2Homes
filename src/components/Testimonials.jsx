@@ -33,8 +33,14 @@ export default function Testimonials() {
           <div
             key={index}
             className="card"
-            data-aos={index < 2 ? "fade-up-right" : "fade-up-left"}
-            data-aos-duration="1100"
+            data-aos={
+              index === 0
+                ? "fade-up-right"
+                : index === 1
+                ? "fade-up"
+                : "fade-up-left"
+            }
+            data-aos-duration="900"
           >
             <video src={x.file} controls />
             <div className="text">

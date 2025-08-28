@@ -53,15 +53,15 @@ export default function Home() {
         <LightRays
           raysOrigin="top"
           raysColor="#FF821D"
-          raysSpeed={0.1}
-          lightSpread={2}
-          rayLength={3}
+          raysSpeed={0}
+          lightSpread={1}
+          rayLength={2}
           fadeDistance={1}
           followMouse={false}
           saturation={0}
           mouseInfluence={0}
           noiseAmount={0}
-          distortion={0.3}
+          distortion={0.2}
           className="custom-rays"
         />
         <Landing />

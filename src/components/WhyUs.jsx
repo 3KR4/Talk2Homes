@@ -65,7 +65,7 @@ const WhyUs = ({ isDesktop }) => {
             <div
               key={index}
               data-aos="fade-up-left"
-              data-aos-duration="600"
+              data-aos-duration="900"
               data-aos-delay={index * 150} // 👈 كل عنصر يتأخر عن اللي قبله
             >
               <AccordionItem
