@@ -215,7 +215,11 @@ body:has(.booking) header .container {
   position: relative !important;
   height: unset !important;
   transition: 0.3s;
+<<<<<<< HEAD
   width: 135px !important;
+=======
+  width: 145px !important;
+>>>>>>> be28d29815234c67190ba6fc02eb74a3743bfdb7
 }
 header .hold {
   display: flex;
