@@ -23,7 +23,7 @@ export const metadata = {
     siteName: "Talk to Homes",
     images: [
       {
-        url: "/ogo.png",
+        url: "/logo.png",
         width: 1300,
         height: 750,
         alt: "Talk to Homes Logo",
