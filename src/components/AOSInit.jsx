@@ -10,7 +10,7 @@ export default function AOSInit() {
       easing: "ease-out",
       once: false,
       mirror: false,
-      offset: 120,
+      offset: 0,
     });
   }, []);
 

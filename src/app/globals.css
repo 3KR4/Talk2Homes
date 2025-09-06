@@ -183,7 +183,7 @@ a {
 }
 @media (min-width: 1600px) {
   .container {
-    width: 1170px;
+    width: 1200px;
   }
 }
 
@@ -251,14 +251,14 @@ header .bars {
 .landing {
   color: white;
   position: relative;
-  height: 91vh;
+  height: 89vh;
   display: flex;
 }
 .landing > .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 50px;
+  gap: 27px;
   flex-direction: column;
 }
 .landing .left {
@@ -269,11 +269,17 @@ header .bars {
   margin-top: -30px;
 }
 .landing .left h2 {
-  font-size: 90px;
+  font-size: 48px;
   color: white;
-  font-weight: 700;
-  line-height: 1.1;
+  font-weight: 600;
   text-align: center;
+}
+.landing .left h1 {
+  color: white;
+  font-size: 74px;
+  font-weight: 700;
+  text-align: center;
+  margin: -15px 0 -20px;
 }
 .landing .left p {
   font-size: 23px;
@@ -281,8 +287,14 @@ header .bars {
   text-align: center;
 }
 .landing:not(.about-us) .left p {
-  margin: 17px 0 25px;
+  margin-top: 17px;
   color: var(--paragraph-2);
+}
+.landing:not(.about-us) hr {
+  background: #4c4c4c;
+  width: 50%;
+  margin: 0 0 -4px 0;
+  height: 2px;
 }
 .landing .left .holder {
   display: flex;
@@ -335,24 +347,37 @@ header .bars {
   display: flex;
   flex-direction: column;
   gap: 75px;
-  padding: 69px 0 98px;
+  padding: 69px 0 123px;
 }
 .tools {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 70%;
+  margin: 20px auto 22px;
 }
 .tools li {
   display: flex;
+  align-items: center;
+  gap: 9px;
 }
 .tools li img {
   position: relative !important;
   width: unset !important;
   height: unset !important;
   transition: 0.3s;
+
+  filter: grayscale(100%);
+  min-height: 47px;
+  max-height: 46px;
 }
-.tools li img:hover {
-  opacity: 0.6;
+
+.tools li img.black {
+  filter: brightness(0.2) grayscale(100%);
+}
+.tools li h4 {
+  font-size: 22px;
+  font-weight: 800;
 }
 
 /*!=============== ABOUT US =============== */
@@ -363,33 +388,37 @@ header .bars {
   height: unset !important;
 }
 .about-us .container {
-  gap: 25px;
+  gap: 35px;
   flex-direction: row;
 }
 .about-us .left {
   align-items: flex-start;
 }
 .about-us .left span {
-  font-size: 24px;
+  font-size: 22px;
   color: var(--main-color);
   font-weight: 500;
   text-align: left;
+  text-transform: capitalize;
 }
 .about-us .left h2 {
   font-size: 54px;
-  color: black;
+  font-weight: 700;
+  color: #232323;
   text-align: left;
+  line-height: 1.2;
 }
 .about-us .left p {
-  margin: 8px 0;
+  margin: 10px 0;
   text-align: left;
-  font-size: 19px;
+  font-size: 18px;
 }
 .about-us .left hr {
   width: 60%;
+  margin: 6px 0 3px;
 }
 .about-us .left p.last-p {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .about-us img {
   position: relative !important;
@@ -407,17 +436,16 @@ header .bars {
 .counters {
   color: white;
   position: relative;
-  border-radius: 35px;
+  border-radius: 47px;
   overflow: hidden;
-  width: 85%;
-  padding: 90px 0;
-  margin: 110px auto 40px;
-}
-.counters .container {
+  width: 86%;
+  padding: 90px 40px;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
+
 .counters .card {
   display: flex;
   flex-direction: column;
@@ -426,7 +454,7 @@ header .bars {
 }
 .counters .card .number {
   font-size: 65px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.5;
 }
 .counters .card h5 {
@@ -486,12 +514,12 @@ header .bars {
 }
 .records .card h4 {
   color: var(--paragraph-2);
-  text-transform: capitalize;
-  font-weight: 500;
-  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 17px;
   position: absolute;
   left: 50%;
-  bottom: 20px;
+  bottom: 18px;
   transform: translateX(-50%);
   transition: 0.3s;
   opacity: 1;
@@ -531,34 +559,37 @@ header .bars {
   color: white !important;
   font-size: 18px;
 }
-.records .custom-nav {
+div:has(.swiper) .custom-nav {
   margin: 29px 0 22px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 15px;
 }
-.records .custom-pagination {
+div:has(.swiper) .custom-pagination {
   display: flex;
   justify-content: center;
   gap: 5px;
 }
-.records svg {
+div:has(.swiper) svg {
   font-size: 24px;
   color: #ccc;
 }
-.records svg:hover {
+div:has(.swiper) svg:hover {
   color: var(--main-color);
 }
-.records .dot {
+div:has(.swiper) .dot {
+  position: relative;
   width: 26px;
   height: 5px;
   border-radius: 4px;
   background: #ccc;
-  transition: 0.3s;
+  overflow: hidden;
+  transition: 0.5s;
 }
-.records .dot.active {
-  background: #fe7e16;
+
+.landing .dot.active {
+  background: var(--main-color);
 }
 
 /*!=============== SERVICES =============== */
@@ -567,7 +598,16 @@ header .bars {
   display: flex;
   flex-direction: column;
   gap: 35px;
-  margin: 55px 0;
+  padding: 84px 0 95px;
+  position: relative;
+}
+.back-layer2 {
+  top: 0 !important;
+  right: 0 !important;
+  left: unset !important;
+  z-index: -1;
+  object-fit: cover;
+  opacity: 0.02;
 }
 .service .container {
   display: grid;
@@ -706,8 +746,8 @@ header .bars {
   padding: 0 16px;
 }
 .why-us .holder .card .content p {
-  margin: 12px 0;
   color: #444;
+  margin: 12px 0;
   line-height: 1.5;
 }
 
@@ -716,9 +756,8 @@ header .bars {
 .next-team {
   position: relative;
   color: white;
-  border-radius: 35px;
   overflow: hidden;
-  width: 85%;
+  width: 100%;
   padding: 72px 0;
   margin: 55px auto;
 }
@@ -727,15 +766,16 @@ header .bars {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  gap: 8px;
 }
 .next-team h3 {
-  font-size: 54px;
+  font-size: 50px;
   font-weight: 500;
   color: white;
   text-align: center;
 }
 .next-team h4 {
-  font-size: 30px;
+  font-size: 28px;
   color: var(--paragraph-2);
   font-weight: 400;
   text-align: center;
@@ -744,7 +784,8 @@ header .bars {
   font-size: 15px;
   font-weight: 600;
   text-transform: uppercase;
-  margin-top: 30px;
+  margin-top: 17px;
+
   background: white;
   color: black;
 }
@@ -762,56 +803,115 @@ header .bars {
   margin: 55px 0;
 }
 .testimonials .container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-  gap: 18px;
-  padding: 0;
+  width: 90%;
+}
+.testimonials .swiper-slide {
+  margin-bottom: 45px;
 }
 .testimonials .card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   background: white;
-  border-radius: 25px;
+  border-radius: 25px 0 0 25px;
   overflow: hidden;
+  height: 400px;
 }
-.testimonials .card video {
-  width: 100%;
+.testimonials .custom-pagination {
+  margin-top: -6px;
 }
+.testimonials .dot {
+  width: 35px;
+  height: 6px;
+}
+.testimonials .dot::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: #fe7e16;
+  transition: none;
+}
+
+.testimonials .dot.active::after {
+  animation: fillProgress 6.4s;
+}
+.testimonials .dot.fill {
+  background: var(--main-color);
+}
+.testimonials .dot.fill::after {
+  display: none;
+}
+
+@keyframes fillProgress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 .testimonials .card .text {
   display: flex;
   flex-direction: column;
-  padding: 13px;
-  background: #f0f0f0;
+  justify-content: center;
+  padding: 0 20px 0 24px;
   height: 100%;
-  border: 1px solid;
-  border-color: #e2e2e2;
-  border-radius: 0 0 25px 25px;
+  align-self: center;
+  border-radius: 0 18px 18px 0;
+  background: #f0f0f0;
 }
-.testimonials .card h4 {
+.testimonials h4 {
+  font-size: 20px;
+  text-align: left;
+}
+.testimonials h5 {
   font-size: 18px;
-}
-.testimonials .card h5 {
-  font-size: 16px;
   color: var(--paragraph);
   margin: 2px 0 7px;
+  text-align: left;
 }
 .testimonials .card p {
-  font-size: 14px;
+  font-size: 16px;
+  text-align: left;
   color: var(--paragraph);
 }
 .testimonials .video-holder {
   background: #f0f0f0;
-  padding: 15px;
+  padding: 15px 0 22px;
   border-radius: 35px;
   display: flex !important;
   align-items: center;
   justify-content: center;
   margin-top: 10px;
+  flex-direction: column;
+  gap: 5px;
+  width: 40%;
+}
+.testimonials .video-holder .top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 10px 7px;
+  justify-content: center;
+}
+.testimonials .video-holder .top span {
+  font-weight: 700;
+  color: #4c4c4c;
+  font-size: 24px;
+}
+.testimonials .video-holder .top h4 {
+  font-size: 19px;
+}
+.testimonials .video-holder .top h5 {
+  margin: 0;
+  font-size: 17px;
 }
 .testimonials .video-holder video {
-  min-width: 100%;
   border-radius: 25px;
 }
 .selectextShadowHost {
@@ -821,12 +921,11 @@ header .bars {
 /*!=============== CHAT =============== */
 
 .chat {
-  background: white;
   position: fixed;
   bottom: 24px;
   right: 19px;
   z-index: 1001;
-  border-radius: 11px;
+  border-radius: 16px;
   overflow: hidden;
   box-shadow: rgba(2, 4, 5, 0.39) 0px 10px 26px;
   transform: scaleY(0);
@@ -841,9 +940,9 @@ header .bars {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--main-color);
   color: white;
   padding: 14px 20px;
+  background: #161616;
 }
 .chat .top img {
   position: relative !important;
@@ -862,6 +961,7 @@ header .bars {
 }
 .chat .holder {
   padding: 15px;
+  background: white;
 }
 .chat .holder p {
   margin-bottom: 6px;
@@ -873,9 +973,12 @@ header .bars {
 }
 .chat .main-button {
   width: 100%;
-  background: var(--main-color);
+  background: #161616;
   padding: 13px 26px;
   margin-top: 5px;
+}
+.chat .main-button:hover {
+  background: var(--main-color);
 }
 
 /*!=============== CONTACT =============== */
@@ -885,6 +988,58 @@ header .bars {
   flex-direction: column;
   gap: 35px;
   margin: 55px 0;
+  position: relative;
+}
+.contact .back-dots {
+  width: 140px !important;
+  height: 125px !important;
+  left: 8% !important;
+  top: 9% !important;
+  filter: grayscale(1);
+  z-index: 0;
+  animation: floating 25s ease-in-out infinite;
+}
+.contact .back-dots.right {
+  right: 8% !important;
+  left: unset !important;
+  bottom: 6% !important;
+  top: unset !important;
+  animation: floating2 25s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(35px, -30px) scale(1.1);
+  }
+  50% {
+    transform: translate(0, -50px) scale(0.9);
+  }
+  75% {
+    transform: translate(-35px, -30px) scale(1.1);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+@keyframes floating2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(-35px, -30px) scale(1.1);
+  }
+  50% {
+    transform: translate(0, -50px) scale(0.9);
+  }
+  75% {
+    transform: translate(35px, -30px) scale(1.1);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
 }
 .contact .container {
   display: flex;
@@ -893,13 +1048,7 @@ header .bars {
   width: 50%;
   align-items: center;
 }
-.contact img {
-  position: relative !important;
-  width: 39% !important;
-  border-radius: 20px !important;
-  height: 49vh !important;
-  object-fit: cover;
-}
+
 .contact .container div:has(form) {
   width: 100%;
 }
@@ -914,7 +1063,7 @@ header .bars {
 .contact form {
   gap: 10px !important;
   background: #f8f8f8;
-  padding: 20px;
+  padding: 25px;
   border-radius: 12px;
 }
 .contact .main-button {
@@ -1087,7 +1236,7 @@ footer .top a {
   align-self: center;
 }
 footer .top .logo {
-  width: 175px !important;
+  width: 195px !important;
 }
 footer h4 {
   direction: ltr !important;
@@ -1122,16 +1271,71 @@ footer .social {
   align-items: center;
   justify-content: space-around;
   gap: 12px;
-  margin-top: 15px;
+  margin-top: 10px;
 }
-footer .social svg {
-  font-size: 22px;
-  color: #d5d5d5;
+footer .newsletter a {
   border: 1px solid #d5d5d5;
+  transition: 0.5s;
   border-radius: 50%;
   padding: 7px;
-  width: 35px;
-  height: 35px;
+  min-width: 37px;
+  height: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer .newsletter a:hover {
+  border-color: transparent !important;
+}
+footer a svg {
+  font-size: 19px;
+  color: #d5d5d5;
+}
+footer .newsletter a:hover svg {
+  color: white !important;
+}
+footer .whatsapp {
+  width: 100% !important;
+  border-radius: 23px !important;
+  gap: 5px;
+  font-size: 13px !important;
+  color: #d5d5d5 !important;
+  font-weight: 500 !important;
+  line-height: 1;
+  padding: 0 7px 0 8px !important;
+}
+footer .whatsapp svg {
+  font-size: 24px;
+  color: #d5d5d5;
+}
+footer .whatsapp:hover {
+  color: white !important;
+  background: #2cd46b;
+}
+footer .whatsapp:hover svg {
+  color: white;
+}
+footer .newsletter a.face:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(10, 111, 229, 1) 0%,
+    rgba(30, 169, 255, 1) 100%
+  );
+}
+
+footer .newsletter a.linked:hover {
+  background: linear-gradient(
+    204deg,
+    rgba(9, 123, 183, 1) 0%,
+    rgba(10, 149, 209, 1) 100%
+  );
+}
+footer .newsletter a.whatsapp:hover {
+  background: linear-gradient(
+    204deg,
+    rgba(41, 255, 80, 1) 0%,
+    rgba(43, 173, 38, 1) 100%
+  );
 }
 footer .bottom .copyright {
   text-align: center;
@@ -1216,8 +1420,7 @@ footer .bottom .copyright a:hover {
   }
 }
 @media (max-width: 1400px) {
-  .counters,
-  .next-team {
+  .counters {
     width: 90%;
   }
   .testimonials {
@@ -1231,8 +1434,7 @@ footer .bottom .copyright a:hover {
   header .logo {
     width: 125px !important;
   }
-  .counters,
-  .next-team {
+  .counters {
     width: 95%;
   }
   .why-us img {
@@ -1290,7 +1492,7 @@ footer .bottom .copyright a:hover {
   .next-team h3 {
     font-size: 40px;
   }
-  .counters .container {
+  .counters {
     gap: 20px;
   }
   .counters .card .number {
@@ -1354,14 +1556,13 @@ footer .bottom .copyright a:hover {
   .counters {
     padding: 55px 0;
     margin: 35px auto 40px;
-  }
-  .counters .container {
     gap: 15px;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     row-gap: 30px;
   }
+
   .next-team,
   .counters {
     width: 100% !important;
@@ -1483,7 +1684,7 @@ footer .bottom .copyright a:hover {
     align-items: center;
     justify-content: center;
   }
-  .counters .container {
+  .counters {
     gap: 0;
   }
   .next-team h3 {
@@ -1544,7 +1745,7 @@ footer .bottom .copyright a:hover {
   .counters {
     padding: 40px 0;
   }
-  .counters .container {
+  .counters {
     gap: 20px;
     grid-template-columns: repeat(1, 1fr);
   }

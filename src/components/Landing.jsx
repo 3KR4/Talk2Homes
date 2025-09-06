@@ -7,23 +7,23 @@ export default function Landing() {
     <div className="landing">
       <div className="container">
         <div className="left">
-          <h2
-            data-aos="fade-up"
-            data-aos-delay="0"
-            data-aos-easing="ease-out"
-          >
-            Never miss a lead
+          <h2 data-aos="fade-up" data-aos-delay="0" data-aos-easing="ease-out">
+            Stop Dialing.
           </h2>
-
-          <p
+          <h1
             data-aos="fade-up"
             data-aos-delay="200"
             data-aos-easing="ease-out"
           >
-            Empower your business with real virtual assistants who handle your
-            calls, qualify leads, and schedule appointments — 24/7.
-          </p>
+            Start Closing.
+          </h1>
 
+          <p data-aos="fade-up" data-aos-delay="400" data-aos-easing="ease-out">
+            Get exclusive, qualified leads delivered by our professional cold
+            calling team. We handle the calls so you focus on
+            closing more deals.
+          </p>
+          {/* 
           <div
             className="holder"
             data-aos="fade-up"
@@ -36,10 +36,11 @@ export default function Landing() {
             <Link href={`/booking`} className="main-button">
               book a call
             </Link>
-          </div>
+          </div> */}
         </div>
+        <hr data-aos="fade-up" data-aos-delay="600" />
 
-          <Recordes />
+        <Recordes />
       </div>
     </div>
   );

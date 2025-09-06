@@ -1,54 +1,124 @@
-import React from "react";
+"use client";
+import React, { useState, useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { Autoplay } from "swiper/modules";
+
 const clients = [
   {
-    name: "Aiden Kirchmair",
-    jop: "Marketing Agency",
+    name: "Chris L.",
+    jop: "Real Estate Investor & Mentor",
     paragraph:
-      "In just the first 30 days of using No Accent Callers, Aiden boosted his monthly revenue by an extra $20,000. His quick success highlights the sheer power of effective, accent-neutral communication in marketing.",
+      "After 14 months of working with Talk2Homes, Chris  completely transformed the way he runs his business. By switching to our  pay-per-lead model, he no longer wastes time managing or hiring cold callers—he just focuses on closing deals.",
     file: "/testimonials/1.mp4",
   },
   {
-    name: "Sophia Martinez",
-    jop: "E-commerce Store Owner",
+    name: "Alex D.",
+    jop: "Real Estate Investor ",
     paragraph:
-      "Sophia saw her abandoned cart recovery rate increase by 35% after implementing No Accent Callers. Customers felt more confident and connected during follow-up calls, leading directly to higher conversions.",
+      "After six months of working with Talk2Homes, Alex has been impressed by how much smoother his business runs. He points to the team’s excellent communication, their ability to maximize every lead, and the seamless support through their CRM. The experience has given him confidence in his process, and Alex says he would highly recommend Talk2Homes to anyone looking to grow their business.",
     file: "/testimonials/2.mp4",
   },
   {
-    name: "James O’Connor",
-    jop: "Real Estate Agent",
+    name: "Monique H.",
+    jop: "Real Estate Investor ",
     paragraph:
-      "James closed 5 extra property deals in just two months. Clear, professional communication over the phone made his international clients feel at ease and built instant trust.",
+      "Monique has trusted the Talk2Homes team to help make her deals happen. By calling sellers on her behalf and always doing good business, we’ve been able to support her growth and success",
     file: "/testimonials/3.mp4",
   },
 ];
 
 export default function Testimonials() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeVideo, setActiveVideo] = useState([]);
+  const swiperRef = useRef(null);
+
+  // refs لكل الفيديوهات
+  const videoRefs = useRef([]);
+
   return (
     <div id="testimonials" className="testimonials">
       <h1 data-aos="fade-up">testimonials</h1>
 
       <div className="container">
-        {clients?.map((x, index) => (
-          <div
-            key={index}
-            className="card"
-            data-aos={
-              index === 0
-                ? "fade-up-right"
-                : index === 1
-                ? "fade-up"
-                : "fade-up-left"
-            }
-          >
-            <video src={x.file} controls />
-            <div className="text">
-              <h4>{x.name}</h4>
-              <h5>{x.jop}</h5>
-              <p>{x.paragraph}</p>
-            </div>
-          </div>
-        ))}
+        <Swiper
+          spaceBetween={30}
+          slidesPerView={2}
+          loop={true}
+          speed={2000}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          modules={[Autoplay]}
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}
+          onSlideChange={(swiper) => {
+            setActiveIndex(swiper.realIndex);
+
+            // وقف كل الفيديوهات
+            videoRefs.current.forEach((video) => {
+              if (video && !video.paused) {
+                video.pause();
+              }
+            });
+
+            setActiveVideo([]);
+          }}
+        >
+          {clients.map((x, index) => (
+            <SwiperSlide key={index}>
+              <div
+                className="card"
+                data-aos="fade-up"
+                data-aos-delay={index * 200}
+              >
+                <video
+                  ref={(el) => (videoRefs.current[index] = el)}
+                  src={x.file}
+                  controls
+                  onPlay={() => {
+                    videoRefs.current.forEach((v, i) => {
+                      if (i !== index && v && !v.paused) {
+                        v.pause();
+                      }
+                    });
+
+                    swiperRef.current?.autoplay.stop();
+                    setActiveVideo((prev) => [...prev, index]);
+                  }}
+                  onPause={() => {
+                    setActiveVideo((prev) => prev.filter((i) => i !== index));
+                  }}
+                  onEnded={() => {
+                    setActiveVideo((prev) => prev.filter((i) => i !== index));
+                  }}
+                />
+                <div className="text">
+                  <h4>{x.name}</h4>
+                  <h5>{x.jop}</h5>
+                  <p>{x.paragraph}</p>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        <div
+          className="custom-pagination"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          {clients.map((_, i) => (
+            <span
+              key={i}
+              className={`dot ${
+                i === activeIndex && activeVideo.length === 0 ? "active" : ""
+              } ${activeVideo.includes(i) ? "fill" : ""}`}
+            />
+          ))}
+        </div>
       </div>
 
       <div
@@ -56,6 +126,11 @@ export default function Testimonials() {
         data-aos="zoom-in"
         data-aos-duration="1300"
       >
+        <div className="top">
+          <h4>Joesph Griffin</h4>
+          <span>-</span>
+          <h5>Tax Deed Wolf Academy CEO</h5>
+        </div>
         <video src={`/clip.mkv`} controls />
       </div>
     </div>

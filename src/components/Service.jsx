@@ -5,77 +5,60 @@ import Image from "next/image";
 export default function Service() {
   return (
     <div id="services" className="service">
-      <h1 data-aos="fade-up" >
-        Our Services
-      </h1>
+      <h1 data-aos="fade-up">Our Services</h1>
+      <Image className="back-layer2" src={`/back-layer2.jpg`} alt={``} fill />
 
       <div className="container">
-        <div
-          className="card"
-          data-aos="fade-up-right"
-          data-aos-delay="0"
-        >
+        <div className="card" data-aos="fade-up-right" data-aos-delay="0">
           <Image src={`/services/1.jpg`} alt={``} fill />
           <span></span>
           <div className="text">
-            <h4>Cold Calling Excellence</h4>
+            <h4>Cold Calling That Converts</h4>
             <p>
-              We don't just make calls; we create connections. Our skilled team
-              knows how to break the ice and turn cold leads into hot
-              opportunities. We handle objections with finesse, build genuine
-              rapport, and uncover deals others might miss.
+              We don’t just make calls — we spark conversations that lead to
+              deals. Our expert callers build trust, handle objections with
+              ease, and turn cold leads into motivated sellers ready to talk.
             </p>
           </div>
         </div>
 
-        <div
-          className="card"
-          data-aos="fade-up-left"
-          data-aos-delay="200"
-        >
+        <div className="card" data-aos="fade-up-left" data-aos-delay="200">
           <Image src={`/services/2.jpeg`} alt={``} fill />
           <span></span>
           <div className="text">
-            <h4>Strategic Lead Generation</h4>
+            <h4>High-Quality Lead Generation</h4>
             <p>
-              Our proactive and targeted approach ensures a steady stream of
-              high-quality leads. We identify motivated sellers, distressed
-              properties, and off-market gems to provide you with the best
-              investment opportunities.
+              Tired of chasing dead leads? Our targeted approach delivers
+              motivated sellers, distressed property owners, and off-market
+              opportunities straight to your pipeline — consistent, exclusive,
+              and ready for you to close.
             </p>
           </div>
         </div>
 
-        <div
-          className="card"
-          data-aos="fade-up-right"
-          data-aos-delay="400"
-        >
+        <div className="card" data-aos="fade-up-right" data-aos-delay="400">
           <Image src={`/services/3.jpg`} alt={``} fill />
           <span></span>
           <div className="text">
-            <h4>End-to-End Deal Facilitation</h4>
+            <h4>Full Pipeline Management</h4>
             <p>
-              From the first call to the final handshake, we're with you every
-              step of the way. Our comprehensive support ensures seamless
-              transactions, allowing you to focus on what you do best investing.
+              From the first ring to the booked appointment, we take care of the
+              entire process. Every call is logged, every lead is qualified, and
+              every opportunity is delivered directly to your CRM.
             </p>
           </div>
         </div>
 
-        <div
-          className="card"
-          data-aos="fade-up-left"
-          data-aos-delay="600"
-        >
+        <div className="card" data-aos="fade-up-left" data-aos-delay="600">
           <Image src={`/services/4.jpeg`} alt={``} fill />
           <span></span>
           <div className="text">
-            <h4>End-to-End Deal Facilitation</h4>
+            <h4>Closing Support That Delivers</h4>
             <p>
-              From the first call to the final handshake, we're with you every
-              step of the way. Our comprehensive support ensures seamless
-              transactions, allowing you to focus on what you do best investing.
+              We go beyond introductions. Our team ensures follow-ups, smooth
+              handoffs, and reliable communication, so no opportunity slips
+              through the cracks — letting you focus on doing what you do
+              best: closing deals.
             </p>
           </div>
         </div>

@@ -19,36 +19,41 @@ export default function Counters() {
         hoverFillColor="#222"
       />
 
-      <div className="container">
         <div className="card" data-aos="fade-up" data-aos-delay="200">
           <div className="number">
-            {inView && <CountUp start={0} end={1000} duration={2.5} />}+
+            {inView && <CountUp start={0} end={300} duration={3} />}+
           </div>
           <h5>Virtual Assistants Trained</h5>
         </div>
 
         <div className="card" data-aos="fade-up" data-aos-delay="400">
           <div className="number">
-            {inView && <CountUp start={0} end={100} duration={4} />}+
+            {inView && <CountUp start={0} end={50} duration={4} />}+
           </div>
-          <h5>Businesses Supported</h5>
+          <h5> Active Investors & Businesses Supported</h5>
         </div>
 
         <div className="card" data-aos="fade-up" data-aos-delay="600">
           <div className="number">
-            {inView && <CountUp start={0} end={24} duration={4} />}/
-            {inView && <CountUp start={0} end={7} duration={4} />}
+            {inView && <CountUp start={0} end={15} duration={4} />}+
           </div>
-          <h5>Real-Time Support Coverage</h5>
+          <h5>Dedicated Calling Teams</h5>
         </div>
 
         <div className="card" data-aos="fade-up" data-aos-delay="800">
           <div className="number">
-            {inView && <CountUp start={0} end={98} duration={4} />}%
+            {inView && <CountUp start={0} end={24} duration={4} />}/
+            {inView && <CountUp start={0} end={7} duration={4} />}
           </div>
-          <h5>Client Satisfaction Rate</h5>
+          <h5>Coverage Across All Time Zones</h5>
         </div>
-      </div>
+
+        <div className="card" data-aos="fade-up" data-aos-delay="1000">
+          <div className="number">
+            {inView && <CountUp start={0} end={95} duration={4} />}%
+          </div>
+          <h5>Client Retention Rate</h5>
+        </div>
     </div>
   );
 }

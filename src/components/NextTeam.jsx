@@ -15,10 +15,11 @@ export default function Counters() {
       />
       <div className="container">
         <h3 data-aos="fade-up" data-aos-delay="200">
-          Ready to stop grinding and start scaling?
+          Done worrying about callers? It’s time to focus on closing.
         </h3>
         <h4 data-aos="fade-up" data-aos-delay="400">
-          Click below and let your virtual assistant take over.
+          Our trained VAs keep your pipeline full while you focus on what
+          matters most — DEALS.
         </h4>
         <Link
           href={`#contact`}
@@ -26,7 +27,7 @@ export default function Counters() {
           data-aos="fade-up"
           data-aos-delay="600"
         >
-          make your next team member
+          Start Closing More Deals
         </Link>
       </div>
     </div>

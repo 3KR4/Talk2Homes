@@ -22,31 +22,31 @@ import { IoIosSkipBackward, IoIosSkipForward } from "react-icons/io";
 const tracks = [
   {
     id: 1,
-    title: "Call Example 1",
+    title: "Amy",
     file: "/audio/sample1.mp3",
     lyrics: transcript1,
   },
   {
     id: 2,
-    title: "Call Example 2",
+    title: "Jane",
     file: "/audio/sample2.mp3",
     lyrics: transcript2,
   },
   {
     id: 3,
-    title: "Call Example 3",
+    title: "Leah",
     file: "/audio/sample3.mp3",
     lyrics: transcript3,
   },
   {
     id: 4,
-    title: "Call Example 4",
+    title: "Mark ",
     file: "/audio/sample4.mp3",
     lyrics: transcript4,
   },
   {
     id: 5,
-    title: "Call Example 5",
+    title: "Rose",
     file: "/audio/sample5.mp3",
     lyrics: transcript5,
   },
@@ -96,12 +96,10 @@ const AudioCard = forwardRef(({ track, isActive }, ref) => {
       }
     };
 
-    // أثناء التشغيل
     wavesurfer.current.on("audioprocess", (time) => {
       updateLyrics(time);
     });
 
-    // عند seek (لو شغال)
     wavesurfer.current.on("seek", (progress) => {
       const duration = wavesurfer.current.getDuration();
       const time = progress * duration;
@@ -109,7 +107,6 @@ const AudioCard = forwardRef(({ track, isActive }, ref) => {
       updateLyrics(time, true);
     });
 
-    // 👇 مهم: يرصد أي interaction (click/seek حتى لو الصوت واقف)
     wavesurfer.current.on("interaction", () => {
       const time = wavesurfer.current.getCurrentTime();
       console.log("🖱️ Interaction event at:", time.toFixed(2));
@@ -162,15 +159,15 @@ export default function Recordes() {
   };
 
   return (
-    <div className="records" data-aos="fade-up" data-aos-delay="600">
-      <h3>Listen to our LIVE calls</h3>
+    <div className="records" data-aos="fade-up" data-aos-delay="800">
+      <h3>Listen to our Real calls</h3>
       <div className="container">
         <Swiper
           modules={[Navigation]}
           spaceBetween={300}
           slidesPerView={1}
           loop={true}
-          speed={1200}
+          speed={1600}
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           onSlideChange={(swiper) => {
             setActiveIndex(swiper.realIndex);
@@ -195,7 +192,7 @@ export default function Recordes() {
         </Swiper>
 
         {/* أزرار التحكم */}
-        <div className="custom-nav" data-aos="fade-up" data-aos-delay="800">
+        <div className="custom-nav" data-aos="fade-up" data-aos-delay="1000">
           <button onClick={() => swiperRef.current?.slidePrev()}>
             <IoIosSkipBackward />
           </button>
@@ -213,7 +210,7 @@ export default function Recordes() {
         <div
           className="custom-pagination"
           data-aos="fade-up"
-          data-aos-delay="1000"
+          data-aos-delay="1200"
           data-aos-duration="1200"
         >
           {tracks.map((_, i) => (

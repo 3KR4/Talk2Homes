@@ -3,6 +3,7 @@ import "aos/dist/aos.css";
 import AOSInit from "@/components/AOSInit";
 import Footer from "@/components/Footer";
 
+
 export const metadata = {
   title: "Talk to Homes",
   description:
@@ -23,7 +24,7 @@ export const metadata = {
     siteName: "Talk to Homes",
     images: [
       {
-        url: "/logo.png",
+        url: "/graph logo.jpg",
         width: 1300,
         height: 750,
         alt: "Talk to Homes Logo",

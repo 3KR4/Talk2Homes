@@ -4,34 +4,35 @@ import Image from "next/image";
 
 const faqs = [
   {
-    question: "Are you buying my home or simply listing it on the MLS?",
+    question: "Why should I use Talk2Homes instead of hiring my own VA?",
     answer:
-      "We buy your home directly. Unlike traditional agents, we don’t just list it — we provide a quick cash offer.",
+      "Hiring, training, and managing VAs takes time and resources. With Talk2Homes, you get a fully trained team, proven systems, and management included — so you can focus on deals, not supervision.",
   },
   {
-    question: "How do I know you are giving me a fair offer for my home?",
+    question: "Are the leads exclusive to me?",
     answer:
-      "Our offers are based on real market data, the condition of your property, and comparable sales in your area.",
+      "Yes. Every lead we generate for you is exclusive — we never resell or recycle leads. Your campaigns are fully yours.",
   },
   {
-    question: "How do you figure out the offer amount?",
+    question: "How do you qualify the leads?",
     answer:
-      "We consider several factors: the location, the extent of repairs needed, the current condition of your property, and the value of comparable houses sold in the area recently.",
+      "Our VAs follow tailored scripts and proven qualification questions to confirm interest, motivation, and property details. Every call is reviewed by our Quality Assurance team to ensure accuracy and professionalism, and we provide full call recordings for each lead so you have complete transparency.",
   },
   {
-    question: "What other fees should I be expecting?",
+    question: "Can you integrate with my CRM?",
     answer:
-      "There are no hidden fees or commissions. The offer you receive is the amount you’ll get.",
+      "Absolutely. We work with Hubspot , GoHighLevel, Podio, Follow Up Boss and other major CRMs to ensure every lead goes directly into your system.",
   },
   {
-    question: "What sets you apart from a traditional real estate agent?",
+    question: "Do you provide lists and skip tracing?",
     answer:
-      "We make the process faster, simpler, and stress-free compared to the traditional way of selling your home.",
+      "Yes. We can provide fresh, skip-traced lists — or work with your own data if you prefer.",
   },
   {
-    question: "Are there any obligations?",
+    question:
+      "What makes Talk2Homes different from other cold-calling companies?",
     answer:
-      "No obligations at all. You’re free to accept or reject the offer without any pressure.",
+      "We focus on quality and relationships. Our trained VAs, dedicated account managers, area code targeting, and real-time monitoring are all designed to maximize results and ROI. But what truly sets us apart is that we also invest ourselves — we know firsthand what it takes to get from a cold call to a closed deal, and we build our process around that experience.",
   },
 ];
 
@@ -66,7 +67,7 @@ const WhyUs = ({ isDesktop }) => {
               key={index}
               data-aos="fade-up-left"
               data-aos-duration="900"
-              data-aos-delay={index * 150} // 👈 كل عنصر يتأخر عن اللي قبله
+              data-aos-delay={index * 200}
             >
               <AccordionItem
                 faq={faq}
@@ -87,7 +88,7 @@ const AccordionItem = ({ faq, isActive, onClick }) => {
 
   useEffect(() => {
     if (isActive) {
-      setHeight(`${contentRef.current.scrollHeight}px`);
+      setHeight(`${contentRef.current.scrollHeight + 24}px`);
     } else {
       setHeight("0px");
     }

@@ -12,19 +12,20 @@ export default function AboutUs({ isDesktop }) {
             about us
           </span>
           <h2 data-aos="fade-right" data-aos-delay="200">
-            Why Our Clients Choose CallGeeks
+            Why Choose Talk2Homes
           </h2>
           <p data-aos="fade-right" data-aos-delay="300">
-            At CallGeeks, we believe every missed call is a missed
-            opportunity.Thats why we built a team of highly trained virtual
-            assistants to help you book more calls, qualify leads, and keep your
-            business running — 24/7.
+            At Talk2Homes, we know that success in real estate comes down to
+            consistent conversations with the right homeowners. That’s why our
+            team of trained virtual assistants works around the clock to qualify
+            leads, set appointments, and keep your pipeline moving. We deliver
+            exclusive, high-quality leads — NEVER SHARED— so you can focus on
+            closing deals instead of chasing calls.
           </p>
           <hr data-aos="fade-right" data-aos-delay="400" />
           <p className="last-p" data-aos="fade-right" data-aos-delay="500">
-            With seamless CRM integrations and real people (not scripts), we
-            give your customers the attention they deserve while you focus on
-            growing your business.
+            With seamless CRM integration and real people who know how to
+            connect with sellers, we make sure every opportunity counts.
           </p>
           <Link
             href={`/booking`}

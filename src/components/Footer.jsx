@@ -2,7 +2,9 @@ import React from "react";
 
 import Link from "next/link";
 import Image from "next/image";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaLinkedin } from "react-icons/fa";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { RiInstagramFill } from "react-icons/ri";
 
 export default function () {
   return (
@@ -36,13 +38,13 @@ export default function () {
             <ul>
               <h4>call us</h4>
               <li>
-                <Link href={``}>phone: (786) 220-3280</Link>
+                <Link href={`/`}>phone: (786) 220-3280</Link>
               </li>
             </ul>
             <ul>
               <h4>email us</h4>
               <li>
-                <Link href={``}>Sales@talktohomes.com</Link>
+                <a href="mailto:Sales@talktohomes.com">Sales@talktohomes.com</a>
               </li>
             </ul>
           </div>
@@ -50,15 +52,32 @@ export default function () {
           <div className="newsletter" data-aos="fade-up" data-aos-delay="600">
             <h4>Social</h4>
             <div className="social">
-              <Link href={`/`} target="_blank" rel="noopener noreferrer">
+              <a
+                className="face"
+                href="https://www.facebook.com/profile.php?id=61559914903423"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaFacebookF />
-              </Link>
-              <Link href={`/`} target="_blank" rel="noopener noreferrer">
-                <FaTwitter />
-              </Link>
-              <Link href={`/`} target="_blank" rel="noopener noreferrer">
-                <FaInstagram />
-              </Link>
+              </a>
+
+              <a
+                className="linked"
+                href="https://www.linkedin.com/in/muhammad-fathi-a60942234/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin />
+              </a>
+
+              <a
+                className="whatsapp"
+                href="https://wa.me/17862203280"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WhatsApp <IoLogoWhatsapp />
+              </a>
             </div>
           </div>
         </div>
