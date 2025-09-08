@@ -55,7 +55,7 @@ const WhyUs = ({ isDesktop }) => {
             data-aos="fade-up-right"
             data-aos-offset="350"
             src={`/thumbnail3.jpg`}
-            alt={`about-us`}
+            alt={`about us`}
             fill
           />
         )}

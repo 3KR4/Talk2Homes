@@ -362,7 +362,7 @@ header .bars {
   align-items: center;
   gap: 9px;
   background: #eeeeee;
-  padding: 11px 17px;
+  padding: 11px 22px;
   border-radius: 13px;
   display: flex;
   align-items: center;
@@ -668,13 +668,13 @@ div:has(.swiper) .dot {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   z-index: 2;
 }
 .service .card h4 {
   font-size: 25px;
   color: var(--main-color);
-  font-weight: 500;
+  font-weight: 600;
   transition: 0.5s;
   text-align: center;
 }
@@ -682,7 +682,7 @@ div:has(.swiper) .dot {
   color: white;
 }
 .service .card p {
-  font-size: 19px;
+  font-size: 18px;
   transition: 0.5s;
   text-align: center;
 }
@@ -735,9 +735,9 @@ div:has(.swiper) .dot {
   background: var(--main-color);
 }
 .why-us .holder .card .top span {
-  font-size: 15px;
+  font-size: 16px;
   text-align: left;
-  font-weight: 500;
+  font-weight: 600;
   color: #323232;
   transition: 0.3s;
 }
@@ -2295,7 +2295,6 @@ footer .bottom .copyright a:hover {
   }
   .service .card h4 {
     font-size: 20px;
-    font-weight: 600;
   }
   .service .card p {
     font-size: 16px;

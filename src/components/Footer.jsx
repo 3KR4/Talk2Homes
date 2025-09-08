@@ -12,7 +12,7 @@ export default function () {
       <div className="container">
         <div className="top">
           <Link href={`/`} data-aos="fade-up" data-aos-delay="0">
-            <Image className="logo" src={`/logo.png`} alt={``} fill />
+            <Image className="logo" src={`/logo.png`} alt={`logo`} fill />
           </Link>
 
           <ul data-aos="fade-up" data-aos-delay="200">

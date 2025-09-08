@@ -6,11 +6,16 @@ export default function Service() {
   return (
     <div id="services" className="service">
       <h1 data-aos="fade-up">Our Services</h1>
-      <Image className="back-layer2" src={`/back-layer2.jpg`} alt={``} fill />
+      <Image
+        className="back-layer2"
+        src={`/back-layer2.jpg`}
+        alt={`back layer img`}
+        fill
+      />
 
       <div className="container">
         <div className="card" data-aos="fade-up-right" data-aos-delay="0">
-          <Image src={`/services/1.jpg`} alt={``} fill />
+          <Image src={`/services/1.jpg`} alt={`services img`} fill />
           <span></span>
           <div className="text">
             <h4>Cold Calling That Converts</h4>
@@ -23,7 +28,7 @@ export default function Service() {
         </div>
 
         <div className="card" data-aos="fade-up-left" data-aos-delay="200">
-          <Image src={`/services/2.jpeg`} alt={``} fill />
+          <Image src={`/services/2.jpeg`} alt={`services img 2`} fill />
           <span></span>
           <div className="text">
             <h4>High-Quality Lead Generation</h4>
@@ -37,7 +42,7 @@ export default function Service() {
         </div>
 
         <div className="card" data-aos="fade-up-right" data-aos-delay="400">
-          <Image src={`/services/3.jpg`} alt={``} fill />
+          <Image src={`/services/3.jpg`} alt={`services img 3`} fill />
           <span></span>
           <div className="text">
             <h4>Full Pipeline Management</h4>
@@ -50,7 +55,7 @@ export default function Service() {
         </div>
 
         <div className="card" data-aos="fade-up-left" data-aos-delay="600">
-          <Image src={`/services/4.jpeg`} alt={``} fill />
+          <Image src={`/services/4.jpeg`} alt={`services img 4`} fill />
           <span></span>
           <div className="text">
             <h4>Closing Support That Delivers</h4>

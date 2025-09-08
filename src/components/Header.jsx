@@ -10,7 +10,7 @@ export default function Header() {
     <header data-aos="fade-down" data-aos-delay="500">
       <div className="container">
         <Link href={`/`}>
-          <Image className="logo" src={`/logo.png`} alt={``} fill />
+          <Image className="logo" src={`/logo.png`} alt={`logo`} fill />
         </Link>
 
         <div className={`hold ${openNav ? "active" : ""}`}>

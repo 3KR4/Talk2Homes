@@ -7,8 +7,18 @@ import Form from "@/components/Form";
 export default function Contact({ isDesktop }) {
   return (
     <div id="contact" className="contact">
-      <Image className="back-dots" src={`/dots.png`} alt="Logo" fill />
-      <Image className="back-dots right" src={`/dots.png`} alt="Logo" fill />
+      <Image
+        className="back-dots"
+        src={`/dots.png`}
+        alt="back layer dots"
+        fill
+      />
+      <Image
+        className="back-dots right"
+        src={`/dots.png`}
+        alt="back layer dots"
+        fill
+      />
 
       <h1 data-aos="fade-up">Contact Us</h1>
       <h4 data-aos="fade-up" data-aos-delay="100">
