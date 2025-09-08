@@ -43,7 +43,6 @@ export default function Testimonials() {
       <div className="container">
         <Swiper
           spaceBetween={30}
-          slidesPerView={2}
           loop={true}
           speed={2000}
           autoplay={{
@@ -51,19 +50,24 @@ export default function Testimonials() {
             disableOnInteraction: false,
           }}
           modules={[Autoplay]}
+          breakpoints={{
+            300: {
+              slidesPerView: 1,
+            },
+            1300: {
+              slidesPerView: 2,
+            },
+          }}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
           onSlideChange={(swiper) => {
             setActiveIndex(swiper.realIndex);
-
-            // وقف كل الفيديوهات
             videoRefs.current.forEach((video) => {
               if (video && !video.paused) {
                 video.pause();
               }
             });
-
             setActiveVideo([]);
           }}
         >
@@ -88,10 +92,8 @@ export default function Testimonials() {
                     swiperRef.current?.autoplay.stop();
                     setActiveVideo((prev) => [...prev, index]);
                   }}
-                  onPause={() => {
-                    setActiveVideo((prev) => prev.filter((i) => i !== index));
-                  }}
                   onEnded={() => {
+                    swiperRef.current?.autoplay.start();
                     setActiveVideo((prev) => prev.filter((i) => i !== index));
                   }}
                 />

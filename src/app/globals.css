@@ -167,8 +167,8 @@ a {
 @media (min-width: 768px) {
   .container {
     width: 720px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 @media (min-width: 992px) {
@@ -352,23 +352,29 @@ header .bars {
 .tools {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 70%;
+  justify-content: center;
+  gap: 18px;
+  width: 90%;
   margin: 20px auto 22px;
 }
 .tools li {
   display: flex;
   align-items: center;
   gap: 9px;
+  background: #eeeeee;
+  padding: 11px 17px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .tools li img {
   position: relative !important;
   width: unset !important;
   height: unset !important;
   transition: 0.3s;
-
   filter: grayscale(100%);
-  min-height: 47px;
+  min-height: 45px;
   max-height: 46px;
 }
 
@@ -376,8 +382,8 @@ header .bars {
   filter: brightness(0.2) grayscale(100%);
 }
 .tools li h4 {
-  font-size: 22px;
-  font-weight: 800;
+  font-size: 17px;
+  font-weight: 700;
 }
 
 /*!=============== ABOUT US =============== */
@@ -476,6 +482,13 @@ header .bars {
 
 /*!=============== RECORDS =============== */
 
+.records {
+  width: 100%;
+}
+.records .container {
+  padding: 0;
+  width: 100%;
+}
 .records h3 {
   text-align: center;
   color: white;
@@ -785,13 +798,13 @@ div:has(.swiper) .dot {
   font-weight: 600;
   text-transform: uppercase;
   margin-top: 17px;
-
+  transition: 0.3s;
   background: white;
   color: black;
 }
 .next-team a:hover {
   color: white;
-  background: var(--main-color) !important;
+  background: var(--main-color);
 }
 
 /*!=============== TESTIMONIALS =============== */
@@ -991,8 +1004,8 @@ div:has(.swiper) .dot {
   position: relative;
 }
 .contact .back-dots {
-  width: 140px !important;
-  height: 125px !important;
+  width: 125px !important;
+  height: 105px !important;
   left: 8% !important;
   top: 9% !important;
   filter: grayscale(1);
@@ -1337,6 +1350,11 @@ footer .newsletter a.whatsapp:hover {
     rgba(43, 173, 38, 1) 100%
   );
 }
+footer .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 footer .bottom .copyright {
   text-align: center;
   font-size: 14px;
@@ -1404,6 +1422,31 @@ footer .bottom .copyright a:hover {
 
 /*!=============== MEDIA QUERY =============== */
 
+@media (max-width: 1700px) {
+  .counters {
+    width: 95%;
+  }
+  .testimonials .card {
+    height: 370px;
+  }
+  .contact .container {
+    width: 55%;
+  }
+  .next-team h3 {
+    font-size: 46px;
+  }
+  .next-team h4 {
+    font-size: 25px;
+  }
+}
+@media (max-width: 1600px) {
+  .counters {
+    width: 97%;
+  }
+  .counters .card h5 {
+    font-size: 17px;
+  }
+}
 @media (max-width: 1500px) {
   .next-team h3 {
     font-size: 48px;
@@ -1418,27 +1461,203 @@ footer .bottom .copyright a:hover {
   .testimonials .container {
     gap: 13px;
   }
+  .landing .left h1 {
+    font-size: 70px;
+  }
+  .landing .left h2 {
+    font-size: 46px;
+  }
+  .landing .left p {
+    font-size: 21px;
+  }
+  .records .card h5 {
+    font-size: 16px;
+  }
+  .tools li img {
+    min-height: 42px;
+    max-height: 42px;
+  }
+  .about-us .left p {
+    font-size: 17px;
+  }
+  .counters {
+    width: 100%;
+    border-radius: 0;
+  }
+  .why-us .container {
+    gap: 27px;
+  }
+  .why-us img {
+    min-width: 42% !important;
+  }
+  .next-team h3 {
+    font-size: 43px;
+  }
+  .next-team h4 {
+    font-size: 23px;
+  }
+  .next-team a {
+    font-size: 14px;
+    height: 47px;
+  }
+  .testimonials .card {
+    height: 335px;
+  }
+  .testimonials h4 {
+    font-size: 19px;
+  }
+  .testimonials h5 {
+    font-size: 17px;
+    color: var(--paragraph);
+    margin: -1px 0 3px;
+  }
+  .testimonials .card p {
+    font-size: 15px;
+  }
+  .testimonials .video-holder .top {
+    padding: 1px 10px 0px;
+  }
+  .contact .back-dots {
+    width: 120px !important;
+    height: 105px !important;
+  }
 }
 @media (max-width: 1400px) {
+  h1 {
+    font-size: 40px;
+  }
+  .tools {
+    gap: 14px;
+  }
   .counters {
-    width: 90%;
+    padding: 90px 20px;
+    gap: 15px;
+  }
+  .counters .card .number {
+    font-size: 60px;
+  }
+  .counters .card h5 {
+    font-size: 16px;
+    text-align: center;
+  }
+  .why-us .holder .card .top span {
+    font-size: 14px;
+  }
+  .why-us .holder .card .content p {
+    font-size: 14px;
+  }
+  .service .card .text {
+    gap: 3px;
+  }
+  .service .card h4 {
+    font-size: 22px;
+  }
+  .service .card p {
+    font-size: 16px;
   }
   .testimonials {
     margin: 0;
   }
+  .next-team h4 {
+    font-size: 21px;
+  }
+  .next-team h3 {
+    font-size: 40px;
+  }
+  .next-team a {
+    font-size: 14px;
+    height: 45px;
+  }
+  .testimonials .container {
+    width: 97%;
+  }
+  .testimonials .swiper-slide {
+    margin-right: 23px !important;
+  }
+  .testimonials .video-holder {
+    width: 44%;
+  }
   .contact .container {
     width: 65%;
+  }
+  .contact .back-dots {
+    width: 110px !important;
+    height: 92px !important;
+  }
+  footer .top .logo {
+    width: 175px !important;
+  }
+  .contact .back-dots {
+    left: 6% !important;
+  }
+  *** .contact .back-dots.right {
+    right: 6% !important;
   }
 }
 @media (max-width: 1300px) {
   header .logo {
     width: 125px !important;
   }
+  .landing {
+    height: 91vh;
+  }
+  .tools li h4 {
+    font-size: 15px;
+  }
   .counters {
-    width: 95%;
+    align-items: flex-start;
+  }
+  .counters .card .number {
+    font-size: 55px;
+    display: flex;
+    line-height: 1.3;
   }
   .why-us img {
     min-width: 40% !important;
+  }
+  .next-team h3 {
+    font-size: 38px;
+  }
+  .testimonials .swiper-slide {
+    margin-right: 30px !important;
+  }
+  .testimonials .container {
+    gap: 0;
+  }
+  .testimonials .card {
+    height: 385px;
+  }
+  .testimonials h4 {
+    font-size: 20px;
+  }
+  .testimonials h5 {
+    font-size: 18px;
+  }
+  .testimonials .card p {
+    font-size: 16px;
+  }
+  .testimonials .video-holder {
+    width: 95%;
+    margin: 0px auto;
+    background: transparent;
+  }
+  .testimonials .video-holder .top {
+    padding: 14px 26px;
+    width: fit-content;
+    background: #f0f0f0;
+    border-radius: 19px 19px 0 0;
+  }
+  .testimonials .video-holder video {
+    width: 100%;
+  }
+  .testimonials .video-holder .top h4 {
+    font-size: 17px;
+  }
+  .testimonials .video-holder .top h5 {
+    font-size: 16px;
+  }
+  .contact .container {
+    width: 70%;
   }
 }
 @media (max-width: 1200px) {
@@ -1446,31 +1665,62 @@ footer .bottom .copyright a:hover {
     width: unset;
   }
   .landing > .container {
-    width: 90%;
+    width: 100%;
+  }
+  .landing .left {
+    width: 80%;
+  }
+  .landing .left h1 {
+    font-size: 65px;
   }
   .landing .left h2 {
-    font-size: 76px;
+    font-size: 43px;
   }
   .landing .left p {
-    font-size: 18px;
+    font-size: 19px;
   }
-  .about-us .left h2 {
-    font-size: 50px !important;
+
+  .tools li img {
+    min-height: 39px;
+    max-height: 39px;
   }
   .about-us img {
     width: 46% !important;
   }
+  .about-us .left p {
+    font-size: 16px;
+  }
   .service .container,
   .why-us .container {
     width: 95%;
+  }
+  .next-team .container {
+    gap: 4px;
+  }
+  .next-team h3 {
+    font-size: 35px;
+  }
+  .next-team h4 {
+    font-size: 20px;
+  }
+  .next-team a {
+    margin-top: 13px;
   }
   .testimonials .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
-  .testimonials .card {
-    width: 32%;
+  .contact .container {
+    width: 80%;
+  }
+
+  .contact .back-dots {
+    left: 3% !important;
+  }
+  .contact .back-dots.right {
+    right: 3% !important;
+    bottom: 3% !important;
   }
 }
 @media (min-width: 1000px) {
@@ -1483,12 +1733,13 @@ footer .bottom .copyright a:hover {
   }
 }
 @media (max-width: 1100px) {
-  .landing .left h2 {
-    font-size: 70px;
+  .tools {
+    width: 97%;
   }
   .about-us .left h2 {
     font-size: 45px !important;
   }
+
   .next-team h3 {
     font-size: 40px;
   }
@@ -1520,11 +1771,9 @@ footer .bottom .copyright a:hover {
 }
 @media (max-width: 992px) {
   header .logo {
-    width: 135px !important;
+    width: 118px !important;
   }
-  .landing {
-    height: 64vh;
-  }
+
   .landing .left {
     width: 90%;
   }
@@ -1536,11 +1785,36 @@ footer .bottom .copyright a:hover {
     width: 100%;
     padding: 0;
   }
+
+  .records .card {
+    padding: 27px 22px 9px;
+  }
+  .records .card.active {
+    padding: 27px 22px 9px;
+  }
+  .records .card h4 {
+    bottom: 14px;
+  }
+  .records .card.active h5 {
+    margin-top: 1px;
+  }
   .tools {
-    width: 92%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    width: 95%;
+  }
+  .tools li {
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
   }
   .tools li img {
-    width: 135px !important;
+    min-height: 48px;
+    max-height: 49px;
+  }
+  .tools li h4 {
+    font-size: 18px;
   }
   .about-us .left {
     align-items: center;
@@ -1557,22 +1831,27 @@ footer .bottom .copyright a:hover {
     padding: 55px 0;
     margin: 35px auto 40px;
     gap: 15px;
-    width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     row-gap: 30px;
   }
 
-  .next-team,
-  .counters {
+  .next-team {
     width: 100% !important;
     border-radius: 0;
   }
-  .testimonials .card {
-    width: 48%;
-  }
   .contact .container {
     width: 90%;
+  }
+  .contact .back-dots.right {
+    bottom: 0 !important;
+  }
+  footer .container {
+    width: 98%;
+  }
+  footer .top {
+    flex-wrap: wrap;
+    gap: 40px;
   }
 }
 @media (max-width: 900px) {
@@ -1608,8 +1887,8 @@ footer .bottom .copyright a:hover {
   }
   header .bars {
     display: flex;
-    color: white;
-    font-size: 35px;
+    color: #e0e0e0 !important;
+    font-size: 35px !important;
     transform: scaleX(1.3) translateX(-13px);
   }
   .landing > .container {
@@ -1618,8 +1897,15 @@ footer .bottom .copyright a:hover {
   .back-layer {
     gap: 85px;
   }
-  .tools li img {
-    width: 112px !important;
+  .service .container,
+  .why-us .container {
+    padding: 0;
+  }
+  .service .card {
+    padding: 20px;
+  }
+  .service .card .text {
+    gap: 5px;
   }
   .service .card h4 {
     font-size: 20px;
@@ -1627,26 +1913,33 @@ footer .bottom .copyright a:hover {
   .service .card p {
     font-size: 15px;
   }
+
   .next-team {
     padding: 48px 0;
   }
   .next-team h3 {
-    font-size: 32px;
+    font-size: 27px;
   }
   .next-team h4 {
-    font-size: 23px;
+    font-size: 17px;
   }
   .next-team button {
     font-size: 14px;
     height: 45px;
   }
+  .testimonials .card {
+    height: 330px;
+  }
   footer .container {
     width: 95%;
   }
+  footer .top .logo {
+    width: 190px !important;
+  }
 }
 @media (max-width: 786px) {
-  .landing .left h2 {
-    font-size: 63px;
+  h1 {
+    font-size: 35px;
   }
   .records .card h5 {
     font-size: 15px;
@@ -1654,14 +1947,27 @@ footer .bottom .copyright a:hover {
   .service .container {
     grid-template-columns: repeat(1, 1fr);
   }
+  .service .card h4 {
+    font-size: 22px;
+  }
+  .service .card p {
+    font-size: 17px;
+  }
+  .why-us .holder .card .top span {
+    font-size: 15px;
+  }
+  .why-us .holder .card .content p {
+    font-size: 15px;
+  }
   .next-team h3 {
-    font-size: 29px;
+    font-size: 24px;
   }
   .next-team h4 {
-    font-size: 21px;
+    font-size: 16px;
   }
-  footer .top .logo {
-    width: 130px !important;
+  .next-team a {
+    font-size: 13px;
+    height: 42px;
   }
   .privacy h1 {
     text-align: center;
@@ -1672,91 +1978,156 @@ footer .bottom .copyright a:hover {
   .landing .left {
     width: 100%;
   }
-  .landing .left h2 {
-    font-size: 58px;
-  }
-  .tools {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-  }
-  .tools li {
-    align-items: center;
-    justify-content: center;
-  }
+
   .counters {
-    gap: 0;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 35px !important;
+  }
+
+  .counters .card h5 {
+    max-width: 91%;
+  }
+  .next-team .container {
+    padding: 0 20px;
   }
   .next-team h3 {
-    font-size: 25px;
+    font-size: 23px;
   }
   .next-team h4 {
-    font-size: 18px;
+    font-size: 16px;
   }
   .next-team button {
     font-size: 13px;
     height: 40px;
   }
+
   .testimonials {
     gap: 25px;
   }
-  .testimonials .container {
-    gap: 20px;
+  .contact .back-dots {
+    width: 90px !important;
+    height: 65px !important;
   }
-  .testimonials .card {
-    width: 95%;
+  footer .container {
+    gap: 30px;
   }
   footer .top {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+    gap: 22px;
+    padding: 0 20px;
   }
-  footer .top a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  footer .top a:has(img) {
+    display: none;
   }
-  footer .top .logo {
-    width: 180px !important;
-  }
+
   footer h4 {
-    text-align: center;
+    font-size: 18px;
   }
   footer .social {
     justify-content: center;
   }
   footer .newsletter {
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-direction: column;
   }
 }
 @media (max-width: 600px) {
-  .landing .left h2 {
-    font-size: 43px;
+  .btns-holder {
+    gap: 4px;
+  }
+  .btns-holder svg {
+    width: 36px;
+    height: 36px;
   }
   .landing .left p {
     font-size: 17px;
   }
   .landing > .container {
-    gap: 50px;
+    gap: 25px;
   }
-  .counters {
-    padding: 40px 0;
+  .landing .left h1 {
+    font-size: 55px;
+  }
+  .landing .left h2 {
+    font-size: 39px;
+  }
+  .tools {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .tools li img {
+    min-height: 43px;
+    max-height: 43px;
+  }
+  .tools li h4 {
+    font-size: 16px;
   }
   .counters {
     gap: 20px;
+    padding: 40px 0;
     grid-template-columns: repeat(1, 1fr);
   }
   .counters .card .number {
     font-size: 38px;
   }
+  .why-us .holder .card .top span {
+    font-size: 14px;
+  }
+
+  .why-us .holder .card .content p {
+    font-size: 13px;
+  }
+  .next-team h3 {
+    font-size: 20px;
+  }
+  .next-team h4 {
+    font-size: 14px;
+  }
+  .next-team a {
+    height: 40px;
+  }
+  .testimonials {
+    gap: 35px;
+    margin: 30px 0;
+  }
+  .testimonials .swiper {
+    margin-top: -15px;
+  }
+  .testimonials .card {
+    height: 100%;
+    flex-direction: column;
+    gap: 12px;
+    background: #f0f0f0;
+    border-radius: 25px;
+  }
+
+  .testimonials .card .text {
+    justify-content: unset;
+    padding: 5px 12px 12px 12px;
+    align-items: center;
+  }
+  .testimonials .card .text p {
+    text-align: center;
+  }
+  .testimonials .custom-pagination {
+    margin-top: 16px;
+  }
   .testimonials .video-holder {
     padding: 0;
   }
+
+  .testimonials .video-holder .top {
+    padding: 10px 22px 7px;
+  }
+  .contact {
+    margin: 55px 0 10px;
+  }
   .contact form {
     padding: 15px;
+  }
+  footer {
+    padding: 45px 0 38px;
   }
 }
 @media (max-width: 500px) {
@@ -1781,11 +2152,11 @@ footer .bottom .copyright a:hover {
   header .main-button {
     height: 43px;
   }
-  .landing > .container {
-    gap: 35px;
+  .landing .left h1 {
+    font-size: 46px;
   }
   .landing .left h2 {
-    font-size: 40px;
+    font-size: 38px;
   }
   .landing .left p {
     font-size: 15px;
@@ -1803,9 +2174,7 @@ footer .bottom .copyright a:hover {
   .tools {
     grid-template-columns: repeat(2, 1fr);
   }
-  .tools li img {
-    width: 140px !important;
-  }
+
   .about-us .left h2 {
     font-size: 40px !important;
   }
@@ -1825,8 +2194,18 @@ footer .bottom .copyright a:hover {
     min-width: 18px;
     min-height: 18px;
   }
+
+  .testimonials .video-holder .top {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    align-items: center;
+  }
   .testimonials .video-holder video {
-    border-radius: 18px;
+    border-radius: 0 0 14px 14px;
+  }
+  .testimonials .video-holder .top span {
+    display: none;
   }
   .contact .container {
     width: 95%;
@@ -1864,15 +2243,45 @@ footer .bottom .copyright a:hover {
   header .bars {
     width: 25px;
   }
-  .landing {
-    height: 75vh;
-  }
+
   .landing .left h2 {
-    font-size: 36px;
+    font-size: 35px;
+  }
+  .landing .left h1 {
+    font-size: 40px;
+    line-height: 1.9;
   }
   .landing .left p {
     font-size: 14px;
     max-width: 93%;
+  }
+  .records .card,
+  .records .card.active {
+    padding: 10px 15px 0;
+  }
+
+  .records .card h4 {
+    font-size: 14px;
+    bottom: 10px;
+  }
+  .records .card h5 {
+    font-size: 13px;
+    font-weight: 300;
+  }
+  .records .card.active h5 {
+    margin: 0 0 8px 0;
+  }
+
+  .tools {
+    gap: 15px;
+  }
+  .tools li img {
+    min-height: 41px;
+    max-height: 41px;
+  }
+  .tools li {
+    font-size: 16px;
+    line-height: 1.2;
   }
   .about-us .left h2 {
     font-size: 35px !important;
@@ -1884,18 +2293,30 @@ footer .bottom .copyright a:hover {
   .about-us .left p.last-p {
     margin-bottom: 13px;
   }
-  .records .card,
-  .records .card.active {
-    padding: 15px;
+  .service .card h4 {
+    font-size: 20px;
+    font-weight: 600;
   }
-  .records .card h5 {
-    font-size: 13px;
-    font-weight: 300;
+  .service .card p {
+    font-size: 16px;
   }
   .why-us .holder .card .top span {
     font-size: 14px;
   }
   .why-us .holder .card .content p {
+    font-size: 13px;
+  }
+  .next-team {
+    padding: 48px 10px;
+  }
+
+  .next-team .container {
+    padding: 0;
+  }
+  .next-team h3 {
+    font-size: 19px;
+  }
+  .next-team h4 {
     font-size: 13px;
   }
   .contact h4 {
@@ -1917,5 +2338,8 @@ footer .bottom .copyright a:hover {
   }
   .back-layer {
     gap: 90px;
+  }
+  .tools {
+    grid-template-columns: repeat(1, 1fr);
   }
 }

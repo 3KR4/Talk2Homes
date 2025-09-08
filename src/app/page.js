@@ -52,10 +52,10 @@ export default function Home() {
         <Header />
         <LightRays
           raysOrigin="top"
-          raysColor="#FF821D"
-          raysSpeed={0}
+          raysColor={window.innerWidth < 600 ? "#FF7300" : "#FF821D"}
+          raysSpeed={window.innerWidth < 600 ? 2 : 0}
           lightSpread={1}
-          rayLength={2}
+          rayLength={window.innerWidth < 600 ? 10 : 2}
           fadeDistance={1}
           followMouse={false}
           saturation={0}
