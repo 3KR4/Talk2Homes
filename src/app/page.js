@@ -17,6 +17,8 @@ import { FaAngleDoubleUp } from "react-icons/fa";
 
 export default function Home() {
   const [showScroll, setShowScroll] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
     const landing = document.querySelector(".landing");
 
@@ -46,16 +48,25 @@ export default function Home() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 600);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
       <div className="big-holder">
         <Header />
         <LightRays
           raysOrigin="top"
-          raysColor={window.innerWidth < 600 ? "#FF7300" : "#FF821D"}
-          raysSpeed={window.innerWidth < 600 ? 2 : 0}
+          raysColor={isMobile ? "#FF7300" : "#FF821D"}
+          raysSpeed={isMobile ? 2 : 0}
           lightSpread={1}
-          rayLength={window.innerWidth < 600 ? 10 : 2}
+          rayLength={isMobile ? 10 : 2}
           fadeDistance={1}
           followMouse={false}
           saturation={0}

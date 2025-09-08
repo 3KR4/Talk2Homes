@@ -191,7 +191,6 @@ export default function Recordes() {
           ))}
         </Swiper>
 
-        {/* أزرار التحكم */}
         <div className="custom-nav" data-aos="fade-up" data-aos-delay="1000">
           <button onClick={() => swiperRef.current?.slidePrev()}>
             <IoIosSkipBackward />
@@ -206,7 +205,6 @@ export default function Recordes() {
           </button>
         </div>
 
-        {/* pagination dots */}
         <div
           className="custom-pagination"
           data-aos="fade-up"

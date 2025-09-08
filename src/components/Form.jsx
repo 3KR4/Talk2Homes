@@ -48,7 +48,6 @@ export default function Form({ isAnimated }) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
-      {/* Name */}
       <div
         className="inputHolder"
         data-aos="fade-up"
@@ -71,7 +70,6 @@ export default function Form({ isAnimated }) {
         {errors.name && <span className="error">{errors.name.message}</span>}
       </div>
 
-      {/* Phone */}
       <div className="inputHolder" data-aos="fade-up" data-aos-delay="350">
         <label htmlFor="phone">Phone Number</label>
         <input
@@ -89,7 +87,6 @@ export default function Form({ isAnimated }) {
         {errors.phone && <span className="error">{errors.phone.message}</span>}
       </div>
 
-      {/* Email */}
       <div className="inputHolder" data-aos="fade-up" data-aos-delay="550">
         <label htmlFor="email">Email Address</label>
         <input
@@ -107,7 +104,6 @@ export default function Form({ isAnimated }) {
         {errors.email && <span className="error">{errors.email.message}</span>}
       </div>
 
-      {/* Message */}
       <div className="inputHolder" data-aos="fade-up" data-aos-delay="750">
         <label htmlFor="message">Your Message</label>
         <textarea
@@ -124,10 +120,8 @@ export default function Form({ isAnimated }) {
         )}
       </div>
 
-      {/* Success Message */}
       {successMsg && <p className="success">{successMsg}</p>}
 
-      {/* Submit Button */}
       <button
         className="main-button"
         type="submit"

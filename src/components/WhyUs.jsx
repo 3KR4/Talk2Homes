@@ -45,11 +45,9 @@ const WhyUs = ({ isDesktop }) => {
 
   return (
     <div id="whyUs" className="why-us">
-      {/* العنوان */}
       <h1 data-aos="fade-up">Why choose us</h1>
 
       <div className="container">
-        {/* الصورة */}
         {isDesktop && (
           <Image
             data-aos="fade-up-right"
@@ -60,7 +58,6 @@ const WhyUs = ({ isDesktop }) => {
           />
         )}
 
-        {/* الـ Accordion */}
         <div className="holder">
           {faqs.map((faq, index) => (
             <div
