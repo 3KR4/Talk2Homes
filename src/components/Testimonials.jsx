@@ -49,7 +49,6 @@ export default function Testimonials() {
             data-aos-delay={index * 200}
           >
             <video
-              ref={(el) => (videoRefs.current[index] = el)}
               src={x.file}
               controls
 
