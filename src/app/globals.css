@@ -816,81 +816,53 @@ div:has(.swiper) .dot {
   margin: 55px 0;
 }
 .testimonials .container {
-  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 0;
+}
+
+.testimonials .card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background: white;
+  border-radius: 25px;
+  overflow: hidden;
+  height: fit-content;
 }
 .testimonials .swiper-slide {
   margin-bottom: 45px;
 }
-.testimonials .card {
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-  background: white;
-  border-radius: 25px 0 0 25px;
-  overflow: hidden;
-  height: 400px;
-}
-.testimonials .custom-pagination {
-  margin-top: -6px;
-}
-.testimonials .dot {
-  width: 35px;
-  height: 6px;
-}
-.testimonials .dot::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 0%;
-  background: #fe7e16;
-  transition: none;
-}
-
-.testimonials .dot.active::after {
-  animation: fillProgress 6.4s;
-}
-.testimonials .dot.fill {
-  background: var(--main-color);
-}
-.testimonials .dot.fill::after {
-  display: none;
-}
-
-@keyframes fillProgress {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 100%;
-  }
-}
-
 .testimonials .card .text {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 20px 0 24px;
-  height: 100%;
+  padding: 16px 20px;
+  height: fit-content;
   align-self: center;
-  border-radius: 0 18px 18px 0;
   background: #f0f0f0;
 }
 .testimonials h4 {
-  font-size: 20px;
-  text-align: left;
-}
-.testimonials h5 {
-  font-size: 18px;
-  color: var(--paragraph);
-  margin: 2px 0 7px;
+  font-size: 19px;
   text-align: left;
 }
 .testimonials .card p {
-  font-size: 16px;
+  font-size: 15px;
   text-align: left;
   color: var(--paragraph);
+}
+.testimonials h5 {
+  font-size: 17px;
+  color: var(--paragraph);
+  margin: 0px 0 5px;
+  text-align: left;
+}
+.testimonials .card button {
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 13px;
+  color: #585858;
 }
 .testimonials .video-holder {
   background: #f0f0f0;
@@ -1426,9 +1398,7 @@ footer .bottom .copyright a:hover {
   .counters {
     width: 95%;
   }
-  .testimonials .card {
-    height: 370px;
-  }
+
   .contact .container {
     width: 55%;
   }
@@ -1457,9 +1427,6 @@ footer .bottom .copyright a:hover {
   .next-team button {
     padding: 15px;
     margin-top: 17px;
-  }
-  .testimonials .container {
-    gap: 13px;
   }
   .landing .left h1 {
     font-size: 70px;
@@ -1500,9 +1467,7 @@ footer .bottom .copyright a:hover {
     font-size: 14px;
     height: 47px;
   }
-  .testimonials .card {
-    height: 335px;
-  }
+
   .testimonials h4 {
     font-size: 19px;
   }
@@ -1621,12 +1586,7 @@ footer .bottom .copyright a:hover {
   .testimonials .swiper-slide {
     margin-right: 30px !important;
   }
-  .testimonials .container {
-    gap: 0;
-  }
-  .testimonials .card {
-    height: 385px;
-  }
+
   .testimonials h4 {
     font-size: 20px;
   }
@@ -1927,9 +1887,7 @@ footer .bottom .copyright a:hover {
     font-size: 14px;
     height: 45px;
   }
-  .testimonials .card {
-    height: 330px;
-  }
+
   footer .container {
     width: 95%;
   }

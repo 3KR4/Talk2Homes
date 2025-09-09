@@ -1,8 +1,6 @@
 "use client";
 import React, { useState, useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import { Autoplay } from "swiper/modules";
+
 
 const clients = [
   {
@@ -29,98 +27,53 @@ const clients = [
 ];
 
 export default function Testimonials() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [activeVideo, setActiveVideo] = useState([]);
-  const swiperRef = useRef(null);
 
-  // refs لكل الفيديوهات
-  const videoRefs = useRef([]);
+  const [expanded, setExpanded] = useState([]);
+
+  const toggleExpand = (index) => {
+    setExpanded((prev) =>
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+    );
+  };
 
   return (
     <div id="testimonials" className="testimonials">
       <h1 data-aos="fade-up">testimonials</h1>
 
       <div className="container">
-        <Swiper
-          spaceBetween={30}
-          loop={true}
-          speed={2000}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          modules={[Autoplay]}
-          breakpoints={{
-            300: {
-              slidesPerView: 1,
-            },
-            1300: {
-              slidesPerView: 2,
-            },
-          }}
-          onSwiper={(swiper) => {
-            swiperRef.current = swiper;
-          }}
-          onSlideChange={(swiper) => {
-            setActiveIndex(swiper.realIndex);
-            videoRefs.current.forEach((video) => {
-              if (video && !video.paused) {
-                video.pause();
-              }
-            });
-            setActiveVideo([]);
-          }}
-        >
-          {clients.map((x, index) => (
-            <SwiperSlide key={index}>
-              <div
-                className="card"
-                data-aos="fade-up"
-                data-aos-delay={index * 200}
-              >
-                <video
-                  ref={(el) => (videoRefs.current[index] = el)}
-                  src={x.file}
-                  controls
-                  onPlay={() => {
-                    videoRefs.current.forEach((v, i) => {
-                      if (i !== index && v && !v.paused) {
-                        v.pause();
-                      }
-                    });
+        {clients.map((x, index) => (
+          <div
+            key={index}
+            className="card"
+            data-aos="fade-up"
+            data-aos-delay={index * 200}
+          >
+            <video
+              ref={(el) => (videoRefs.current[index] = el)}
+              src={x.file}
+              controls
 
-                    swiperRef.current?.autoplay.stop();
-                    setActiveVideo((prev) => [...prev, index]);
-                  }}
-                  onEnded={() => {
-                    swiperRef.current?.autoplay.start();
-                    setActiveVideo((prev) => prev.filter((i) => i !== index));
-                  }}
-                />
-                <div className="text">
-                  <h4>{x.name}</h4>
-                  <h5>{x.jop}</h5>
-                  <p>{x.paragraph}</p>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-
-        <div
-          className="custom-pagination"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          {clients.map((_, i) => (
-            <span
-              key={i}
-              className={`dot ${
-                i === activeIndex && activeVideo.length === 0 ? "active" : ""
-              } ${activeVideo.includes(i) ? "fill" : ""}`}
             />
-          ))}
-        </div>
+            <div className="text">
+              <h4>{x.name}</h4>
+              <h5>{x.jop}</h5>
+              <p>
+                {expanded.includes(index)
+                  ? x.paragraph
+                  : x.paragraph.split(" ").slice(0, 32).join(" ") +
+                    (x.paragraph.split(" ").length > 32 ? "..." : "")}{" "}
+                {x.paragraph.split(" ").length > 32 && (
+                  <button
+                    onClick={() => toggleExpand(index)}
+                    className="see-more-btn"
+                  >
+                    {expanded.includes(index) ? "See less" : "See more"}
+                  </button>
+                )}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
 
       <div
