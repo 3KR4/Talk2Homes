@@ -346,16 +346,22 @@ header .bars {
   background-position: center;
   display: flex;
   flex-direction: column;
-  gap: 75px;
+  gap: 105px;
   padding: 69px 0 123px;
 }
 .tools {
+  width: 90%;
+  margin: 20px auto 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.tools .container {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 18px;
-  width: 90%;
-  margin: 20px auto 22px;
+  width: 100%;
 }
 .tools li {
   display: flex;
@@ -392,6 +398,9 @@ header .bars {
   background: transparent;
   color: #222222;
   height: unset !important;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
 }
 .about-us .container {
   gap: 35px;
@@ -1491,7 +1500,7 @@ footer .bottom .copyright a:hover {
   h1 {
     font-size: 40px;
   }
-  .tools {
+  .tools .container {
     gap: 14px;
   }
   .counters {
@@ -1759,10 +1768,12 @@ footer .bottom .copyright a:hover {
     margin-top: 1px;
   }
   .tools {
+    width: 95%;
+  }
+  .tools .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
-    width: 95%;
   }
   .tools li {
     align-items: center;
@@ -2011,7 +2022,7 @@ footer .bottom .copyright a:hover {
   .landing .left h2 {
     font-size: 39px;
   }
-  .tools {
+  .tools .container {
     grid-template-columns: repeat(2, 1fr);
   }
   .tools li img {
@@ -2129,7 +2140,7 @@ footer .bottom .copyright a:hover {
   .records .card.active h5 {
     margin-top: 5px;
   }
-  .tools {
+  .tools .container {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -2230,7 +2241,7 @@ footer .bottom .copyright a:hover {
     margin: 0 0 8px 0;
   }
 
-  .tools {
+  .tools .container {
     gap: 15px;
   }
   .tools li img {
