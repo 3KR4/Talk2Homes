@@ -874,24 +874,28 @@ div:has(.swiper) .dot {
   color: #585858;
 }
 .testimonials .video-holder {
-  background: #f0f0f0;
-  padding: 15px 0 22px;
-  border-radius: 35px;
   display: flex !important;
   align-items: center;
   justify-content: center;
   margin-top: 10px;
   flex-direction: column;
-  gap: 5px;
-  width: 40%;
+  gap: 0px;
+  width: 82%;
 }
 .testimonials .video-holder .top {
-  width: 100%;
   display: flex;
   align-items: center;
   gap: 7px;
-  padding: 5px 10px 7px;
   justify-content: center;
+  padding: 18px 32px;
+
+  width: fit-content;
+  background: #f0f0f0;
+  border-radius: 19px 19px 0 0;
+}
+
+.testimonials .video-holder video {
+  width: 100%;
 }
 .testimonials .video-holder .top span {
   font-weight: 700;
@@ -1548,9 +1552,7 @@ footer .bottom .copyright a:hover {
   .testimonials .swiper-slide {
     margin-right: 23px !important;
   }
-  .testimonials .video-holder {
-    width: 44%;
-  }
+
   .contact .container {
     width: 65%;
   }
@@ -1610,15 +1612,7 @@ footer .bottom .copyright a:hover {
     margin: 0px auto;
     background: transparent;
   }
-  .testimonials .video-holder .top {
-    padding: 14px 26px;
-    width: fit-content;
-    background: #f0f0f0;
-    border-radius: 19px 19px 0 0;
-  }
-  .testimonials .video-holder video {
-    width: 100%;
-  }
+
   .testimonials .video-holder .top h4 {
     font-size: 17px;
   }
@@ -1810,6 +1804,9 @@ footer .bottom .copyright a:hover {
   .next-team {
     width: 100% !important;
     border-radius: 0;
+  }
+  .testimonials .video-holder {
+    width: 95%;
   }
   .contact .container {
     width: 90%;
