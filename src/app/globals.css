@@ -1317,11 +1317,11 @@ footer .newsletter a.face:hover {
   );
 }
 
-footer .newsletter a.linked:hover {
+footer .newsletter a.insta:hover {
   background: linear-gradient(
     204deg,
-    rgba(9, 123, 183, 1) 0%,
-    rgba(10, 149, 209, 1) 100%
+    rgb(217, 14, 180) 0%,
+    rgb(255, 182, 47) 100%
   );
 }
 footer .newsletter a.whatsapp:hover {

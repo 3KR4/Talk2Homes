@@ -2,7 +2,7 @@ import React from "react";
 
 import Link from "next/link";
 import Image from "next/image";
-import { FaFacebookF, FaLinkedin } from "react-icons/fa";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { RiInstagramFill } from "react-icons/ri";
 
@@ -62,12 +62,12 @@ export default function () {
               </a>
 
               <a
-                className="linked"
-                href="https://www.linkedin.com/in/muhammad-fathi-a60942234/"
+                className="insta"
+                href="https://www.instagram.com/talktohomes/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaLinkedin />
+                <FaInstagram />
               </a>
 
               <a
