@@ -4,6 +4,7 @@ import AOSInit from "@/components/AOSInit";
 import Footer from "@/components/Footer";
 
 export const metadata = {
+  metadataBase: new URL("https://talk2homes.com"),
   title: "Talk to Homes",
   description:
     "Real Estate Cold Calling Services specializes in providing high-quality cold calling services to real estate professionals.",
@@ -13,11 +14,11 @@ export const metadata = {
     title: "Talk to Homes",
     description:
       "Real Estate Cold Calling Services specializes in providing high-quality cold calling services to real estate professionals.",
-    url: "https://talk2-homes.vercel.app",
+    url: "https://talk2homes.com",
     siteName: "Talk to Homes",
     images: [
       {
-        url: "/graph logo.jpg",
+        url: "/graph-logo.jpg",
         width: 1300,
         height: 750,
         alt: "Talk to Homes Logo",
@@ -27,11 +28,12 @@ export const metadata = {
     type: "website",
   },
   icons: {
-    icon: "/small graph logo.jpg",
-    shortcut: "/small graph logo.jpg",
-    apple: "/small graph logo.jpg",
+    icon: "/small-graph-logo.jpg",
+    shortcut: "/small-graph-logo.jpg",
+    apple: "/small-graph-logo.jpg",
   },
 };
+
 
 export default function RootLayout({ children }) {
   return (

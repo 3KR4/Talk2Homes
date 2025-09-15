@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useRef } from "react";
 
-
 const clients = [
   {
     name: "Chris L.",
@@ -9,6 +8,7 @@ const clients = [
     paragraph:
       "After 14 months of working with Talk2Homes, Chris  completely transformed the way he runs his business. By switching to our  pay-per-lead model, he no longer wastes time managing or hiring cold callers—he just focuses on closing deals.",
     file: "/testimonials/1.mp4",
+    thumbnail: "/testimonials/thumbnail/1.png",
   },
   {
     name: "Alex D.",
@@ -16,6 +16,7 @@ const clients = [
     paragraph:
       "After six months of working with Talk2Homes, Alex has been impressed by how much smoother his business runs. He points to the team’s excellent communication, their ability to maximize every lead, and the seamless support through their CRM. The experience has given him confidence in his process, and Alex says he would highly recommend Talk2Homes to anyone looking to grow their business.",
     file: "/testimonials/2.mp4",
+    thumbnail: "/testimonials/thumbnail/2.png",
   },
   {
     name: "Monique H.",
@@ -23,11 +24,11 @@ const clients = [
     paragraph:
       "Monique has trusted the Talk2Homes team to help make her deals happen. By calling sellers on her behalf and always doing good business, we’ve been able to support her growth and success",
     file: "/testimonials/3.mp4",
+    thumbnail: "/testimonials/thumbnail/3.png",
   },
 ];
 
 export default function Testimonials() {
-
   const [expanded, setExpanded] = useState([]);
 
   const toggleExpand = (index) => {
@@ -48,11 +49,7 @@ export default function Testimonials() {
             data-aos="fade-up"
             data-aos-delay={index * 200}
           >
-            <video
-              src={x.file}
-              controls
-
-            />
+            <video src={x.file} controls poster={x.thumbnail} />
             <div className="text">
               <h4>{x.name}</h4>
               <h5>{x.jop}</h5>
@@ -85,7 +82,11 @@ export default function Testimonials() {
           <span>-</span>
           <h5>Tax Deed Wolf Academy CEO</h5>
         </div>
-        <video src={`/clip.mkv`} controls />
+        <video
+          src={`/testimonials/clip.mp4`}
+          controls
+          poster="/testimonials/thumbnail/4.png"
+        />
       </div>
     </div>
   );
