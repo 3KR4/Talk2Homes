@@ -14,11 +14,9 @@ export default function Form({ isAnimated }) {
   } = useForm();
 
   const [loading, setLoading] = useState(false);
-  const [successMsg, setSuccessMsg] = useState("");
 
   const onSubmit = async (data) => {
     setLoading(true);
-    setSuccessMsg("");
 
     try {
       const res = await emailjs.send(
@@ -35,12 +33,13 @@ export default function Form({ isAnimated }) {
 
       if (res.status === 200) {
         reset(); // يمسح الفورم
-        setSuccessMsg("Your message has been sent successfully");
-        setTimeout(() => setSuccessMsg(""), 3000);
+        window.location.href = "/success";
       }
     } catch (error) {
       console.error("EmailJS Error:", error);
-      alert("Something went wrong, please try again!");
+      alert(
+        "Something went wrong! Please try again later, or reach out to us at our email"
+      );
     } finally {
       setLoading(false);
     }
@@ -79,7 +78,7 @@ export default function Form({ isAnimated }) {
           {...register("phone", {
             required: "Phone is required",
             pattern: {
-              value: /^[0-9]{10,15}$/,
+              value: /^\+?\(?\d{1,4}\)?[-\s]?\d{6,14}$/,
               message: "Please enter a valid phone number",
             },
           })}
@@ -119,8 +118,6 @@ export default function Form({ isAnimated }) {
           <span className="error">{errors.message.message}</span>
         )}
       </div>
-
-      {successMsg && <p className="success">{successMsg}</p>}
 
       <button
         className="main-button"
