@@ -88,6 +88,8 @@ export default function Home() {
       <Testimonials />
       <Contact isDesktop={isDesktop} />
       <Chat />
+
+      
       <div
         className="btns-holder"
         data-aos="fade-left"

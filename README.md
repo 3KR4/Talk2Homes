@@ -14,7 +14,7 @@ npm install
 ```
 2) Start the development server:
 ```bash
-npm run dev
+npm run devaa
 ```
 3) Open `http://localhost:3000` in your browser.
 
