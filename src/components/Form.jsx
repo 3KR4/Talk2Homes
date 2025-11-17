@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { IoSend } from "react-icons/io5";
 import emailjs from "@emailjs/browser";
 
-export default function Form({ isAnimated }) {
+export default function Form({ formId }) {
   const {
     register,
     handleSubmit,
@@ -32,7 +32,7 @@ export default function Form({ isAnimated }) {
       );
 
       if (res.status === 200) {
-        reset(); // يمسح الفورم
+        reset();
         window.location.href = "/success";
       }
     } catch (error) {
@@ -47,12 +47,7 @@ export default function Form({ isAnimated }) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
-      <div
-        className="inputHolder"
-        data-aos="fade-up"
-        data-aos-duration="1500"
-        data-aos-delay="150"
-      >
+      <div className="inputHolder">
         <label htmlFor="name">Name</label>
         <input
           id="name"
@@ -69,7 +64,7 @@ export default function Form({ isAnimated }) {
         {errors.name && <span className="error">{errors.name.message}</span>}
       </div>
 
-      <div className="inputHolder" data-aos="fade-up" data-aos-delay="350">
+      <div className="inputHolder">
         <label htmlFor="phone">Phone Number</label>
         <input
           id="phone"
@@ -86,7 +81,7 @@ export default function Form({ isAnimated }) {
         {errors.phone && <span className="error">{errors.phone.message}</span>}
       </div>
 
-      <div className="inputHolder" data-aos="fade-up" data-aos-delay="550">
+      <div className="inputHolder">
         <label htmlFor="email">Email Address</label>
         <input
           id="email"
@@ -103,7 +98,7 @@ export default function Form({ isAnimated }) {
         {errors.email && <span className="error">{errors.email.message}</span>}
       </div>
 
-      <div className="inputHolder" data-aos="fade-up" data-aos-delay="750">
+      <div className="inputHolder">
         <label htmlFor="message">Your Message</label>
         <textarea
           id="message"
@@ -119,14 +114,45 @@ export default function Form({ isAnimated }) {
         )}
       </div>
 
-      <button
-        className="main-button"
-        type="submit"
-        disabled={loading}
-        {...(isAnimated
-          ? { "data-aos": "fade-up", "data-aos-delay": "750" }
-          : {})}
-      >
+      <div className="checkbox-wrapper-4">
+        <input
+          className="inp-cbx"
+          id={`${formId}-consent`}
+          type="checkbox"
+          {...register("consent", {
+            required: "You must agree before submitting",
+          })}
+        />
+
+        <label className="cbx" htmlFor={`${formId}-consent`}>
+          <span>
+            <svg width="12px" height="10px">
+              <use xlinkHref="#check-4"></use>
+            </svg>
+          </span>
+          <span>
+            I agree to receive text and email messages about my inquiry. I can
+            opt out anytime.
+          </span>
+        </label>
+
+        <svg className="inline-svg">
+          <symbol id="check-4" viewBox="0 0 12 10">
+            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+          </symbol>
+        </svg>
+
+        {errors.consent && (
+          <span
+            className="error"
+            style={{ color: "#ff4d4d", fontSize: "13px" }}
+          >
+            {errors.consent.message}
+          </span>
+        )}
+      </div>
+
+      <button className="main-button" type="submit" disabled={loading}>
         {loading ? (
           <span className="loader"></span>
         ) : (

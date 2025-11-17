@@ -35,7 +35,7 @@ export default function ChatForm() {
 
       <div className="holder">
         <p>fill up your data and we will call you back</p>
-        <Form isAnimated ={false}/>
+        <Form formId={2} />
       </div>
     </div>
   );

@@ -90,7 +90,8 @@ export default function () {
         >
           <div className="copyright">
             Copyright © Talk2Homes | All Rights Reserved 2025 |{" "}
-            <Link href={`/privacy`}>Privacy Policy</Link>
+            <Link href={`/privacy`}>Privacy Policy</Link> |{" "}
+            <Link href={`/conditions`}>Terms & Conditions</Link>
           </div>
         </div>
       </div>

@@ -27,7 +27,7 @@ export default function Contact({ isDesktop }) {
 
       <div className="container">
         <div data-aos="fade-up" data-aos-delay="200">
-          <Form isAnimated={true} />
+          <Form formId={1} />
         </div>
       </div>
     </div>
