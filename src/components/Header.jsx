@@ -6,6 +6,7 @@ import { FaBars } from "react-icons/fa6";
 
 export default function Header() {
   const [openNav, setOpenNav] = useState(false);
+
   return (
     <header data-aos="fade-down" data-aos-delay="500">
       <div className="container">
@@ -14,27 +15,31 @@ export default function Header() {
         </Link>
 
         <div className={`hold ${openNav ? "active" : ""}`}>
-          <nav>
+          <nav onClick={() => setOpenNav(false)}>
             <ul>
-              <li data-aos="fade-down" data-aos-delay="600">
-                <Link href={`/#about`}>about us</Link>
+              <li>
+                <Link href="/#about">about us</Link>
               </li>
-              <li data-aos="fade-down" data-aos-delay="800">
-                <Link href={`/#services`}>services</Link>
+              <li>
+                <Link href="/#services">services</Link>
               </li>
-              <li data-aos="fade-down" data-aos-delay="1000">
-                <Link href={`/#whyUs`}>why Us</Link>
+              <li>
+                <Link href="/#whyUs">why Us</Link>
               </li>
-              <li data-aos="fade-down" data-aos-delay="1200">
-                <Link href={`/#testimonials`}>testimonials</Link>
+              <li>
+                <Link href="/#testimonials">testimonials</Link>
               </li>
-              <li data-aos="fade-down" data-aos-delay="1400">
-                <Link href={`/#contact`}>contact</Link>
+              <li>
+                <Link href="/#contact">contact</Link>
               </li>
             </ul>
           </nav>
 
-          <Link href={`/booking`} className={`main-button main-color`}>
+          <Link
+            href={`/booking`}
+            className="main-button main-color"
+            onClick={() => setOpenNav(false)}
+          >
             book a call
           </Link>
         </div>
